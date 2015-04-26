@@ -99,13 +99,13 @@ public class Player extends GameObject {
             case 1:
                 if(this.shotTimer <0) {
                     BasicShot.shoot(handler, this);
-                    shotTimer = 1f;
+                    shotTimer = .01f;
                 }
                 break;
             case 2:
                 if(this.shotTimer <0) {
                     Spread.shoot(handler, this);
-                    shotTimer = 5f;
+                    shotTimer = .1f;
                 }
                 break;
         }
@@ -113,7 +113,7 @@ public class Player extends GameObject {
 
     @Override
     public void tick() {
-        shotTimer -=.1f;
+        shotTimer -=.01f;
 
         x += velX;
         y += velY;
