@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 
 /**
  * Created by Calvin Ta on 3/27/2015.
+ *
  */
 public class GameStateManager {
     public boolean changedState;
@@ -60,6 +61,10 @@ public class GameStateManager {
             gameState = new HighScoreState(this);
             changedState = true;
         }
+        if (state == GMOVER) {
+            gameState = new GameOverState(this);
+            changedState = true;
+        }
 
 
 
@@ -70,13 +75,7 @@ public class GameStateManager {
         return Name;
     }
 
-    public void setState(int state, int score)
-    {
-        if (state == GMOVER) {
-            gameState = new GameOverState(this,score);
-            changedState = true;
-        }
-    }
+
 
         public GameState getGameState() {
         return gameState;

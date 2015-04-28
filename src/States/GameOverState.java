@@ -1,5 +1,6 @@
 package States;
 
+import KeyInputs.ScoreInput;
 import Main.Game;
 
 import java.awt.*;
@@ -11,17 +12,17 @@ import java.awt.event.MouseListener;
  */
 public class GameOverState extends GameState
 {
-    private int score;
+
     private boolean newHighScore;
-    public GameOverState(GameStateManager gsm, int score)
+    public GameOverState(GameStateManager gsm)
     {
         super(gsm);
-        this.score = score;
+
         newHighScore = Save.gd.isHighScore(Save.gd.getTentativeScore());
         if(newHighScore) {
             Save.gd.addHighScore(
                     Save.gd.getTentativeScore(),
-                    new String(gsm.getName())
+                    gsm.getName()
             );
             Save.save();
         }
@@ -55,7 +56,7 @@ public class GameOverState extends GameState
 
     @Override
     public KeyListener getKeyListener() {
-        return null;
+        return new ScoreInput(gsm);
     }
 
     @Override

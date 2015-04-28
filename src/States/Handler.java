@@ -49,10 +49,12 @@ public class Handler extends GameState {
             tempO.tick();
             if(tempO.getId() == ID.Player)
             {
+
                 if(((Player)tempO).getHEALTH() <= 0)
                 {
+
                     save.gd.setTenativeScore(((Player) tempO).getScore());
-                    gsm.setState(gsm.GMOVER);
+                    this.gameOver();
                 }
             }
 
@@ -77,9 +79,9 @@ public class Handler extends GameState {
 
 
     }
-    public void gameOver(int score)
+    public void gameOver()
     {
-        gsm.setState(3,score);
+        gsm.setState(gsm.GMOVER);
     }
 
     public void addPoint(int point)
