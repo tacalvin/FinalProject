@@ -14,7 +14,7 @@ public class GameStateManager {
     public static final int PLAY = 1;
     public static final int HIGHSCORE = 2;
     public static final int GMOVER = 3;//game over
-    public static final int NAMESELECT =4;
+
     public Save save;
     private boolean nameSelected;
     private String Name;
@@ -49,7 +49,7 @@ public class GameStateManager {
             gameState = new NameSelect(this);
             changedState = true;
             if(nameSelected) {
-                gameState = new Handler(this);
+                gameState = new Handler(this,save);
 
                 //switch to play state
                 //TODO: Change states
@@ -64,6 +64,12 @@ public class GameStateManager {
 
 
     }
+
+    public String getName()
+    {
+        return Name;
+    }
+
     public void setState(int state, int score)
     {
         if (state == GMOVER) {

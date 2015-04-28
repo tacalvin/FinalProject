@@ -16,16 +16,16 @@ public class GameOverState extends GameState
     public GameOverState(GameStateManager gsm, int score)
     {
         super(gsm);
-//        this.score = score;
-//        newHighScore = Save.gd.isHighScore(Save.gd.getTentativeScore());
-//        if(newHighScore) {
-//            Save.gd.addHighScore(
-//                    Save.gd.getTentativeScore(),
-//                    new String(gsm.getName)
-//            );
-//            Save.save();
-//        }
-//        gsm.setState(GameStateManager.MENUS);
+        this.score = score;
+        newHighScore = Save.gd.isHighScore(Save.gd.getTentativeScore());
+        if(newHighScore) {
+            Save.gd.addHighScore(
+                    Save.gd.getTentativeScore(),
+                    new String(gsm.getName())
+            );
+            Save.save();
+        }
+        gsm.setState(GameStateManager.MENUS);
     }
 
 

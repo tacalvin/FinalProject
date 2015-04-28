@@ -26,10 +26,12 @@ public class Handler extends GameState {
     public ArrayList<GameObject> object = new ArrayList<GameObject>();
     private Spawn ofSatan;
     private HUD hud;
+    private Save save;
 
 
-    public Handler(GameStateManager game) {
+    public Handler(GameStateManager game,Save save) {
         super(game);
+        this.save = save;
         ofSatan = new Spawn(this);
         Player player = new Player(Game.WIDTH / 2, Game.HEIGHT / 2, ID.Player, this);
 
@@ -45,6 +47,14 @@ public class Handler extends GameState {
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
             tempO.tick();
+            if(tempO.getId() == ID.Player)
+            {
+                if(((Player)tempO).getHEALTH() <= 0)
+                {
+                    save.gd.setTenativeScore(((Player) tempO).getScore());
+                    gsm.setState(gsm.GMOVER);
+                }
+            }
 
         }
         hud.tick();

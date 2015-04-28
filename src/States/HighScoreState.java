@@ -1,5 +1,6 @@
 package States;
 
+import KeyInputs.ScoreInput;
 import Main.Game;
 
 import java.awt.*;
@@ -11,9 +12,13 @@ import java.awt.event.MouseListener;
  */
 public class HighScoreState extends GameState {
 
-
+    private long[] highScores;
+    private String[] names;
     public HighScoreState(GameStateManager gsm) {
         super(gsm);
+        highScores = Save.gd.getHighScores();
+        names = Save.gd.getNames();
+
     }
 
     @Override
@@ -30,12 +35,31 @@ public class HighScoreState extends GameState {
         Font font = new Font("arial",1,60);
         g.setFont(font);
         //save position
-        g.drawString("Nothing Works Here Yet",100,100);
+        g.drawString("HighScores", 100, 100);
+
+        String s;
+
+        s = "High Scores";
+
+        font = new Font("arial",1,30);
+
+        for(int i = 0; i < highScores.length; i++)
+        {
+            s = String.format(
+                    "%2d. %7s %s", i+1, highScores[i],names[i]
+            );
+
+            g.drawString(s,((Game.WIDTH ) /2)-100, 260 + 20 * i*2);
+        }
+
+
+
+
     }
 
 
     public KeyListener getKeyListener() {
-        return null;
+        return new ScoreInput(gsm);
     }
 
 

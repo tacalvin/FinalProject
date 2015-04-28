@@ -69,13 +69,7 @@ public class Player extends GameObject {
             if (temp.getId() == ID.BasicEnemy) {
                 //checks for collisions of player and enemies
                 if (getBounds().intersects(temp.getBounds())) {
-                    if(HEALTH ==0)
-                    {
 
-                        handler.gameOver(this.getScore());
-
-
-                    }
                    HEALTH -= 2;
 
                 }
