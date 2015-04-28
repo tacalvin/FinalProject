@@ -39,7 +39,7 @@ public class HighScoreState extends GameState {
 
         String s;
 
-        s = "High Scores";
+
 
         font = new Font("arial",1,30);
 

@@ -1,6 +1,7 @@
 package GameLogic;
 
 import GameObjects.BasicEnemy;
+import GameObjects.FastEnemy;
 import Main.Game;
 import States.Handler;
 import UI.HUD;
@@ -35,10 +36,12 @@ public class Spawn {
 
             scoreKeep = 0;
 
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 5; i++) {
 //                if (hud.getLevel() >= 1)
                     handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 16), r.nextInt(Game.HEIGHT - 16)
                             , ID.BasicEnemy, handler));
+                handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH - 16), r.nextInt(Game.HEIGHT - 16)
+                        , ID.BasicEnemy, handler));
 //                if (hud.getLevel() >= 2)
 //                    handler.addObject(new FasterEnemy(r.nextInt(Game.WIDTH - 16), r.nextInt(Game.HEIGHT - 16)
 //                            , ID.FastEnemy, handler));
