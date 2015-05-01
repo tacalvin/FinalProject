@@ -1,6 +1,7 @@
 package GameObjects;
 
 
+import Frameworks.Animate;
 import GameLogic.ID;
 
 import Main.Game;
@@ -19,27 +20,36 @@ import java.net.URL;
  * Created by Calvin Ta on 3/28/2015.
  */
 public class Player extends GameObject {
-    private BufferedImage im;
+    private BufferedImage[] im;
+    private BufferedImage sheet;
 
     private int HEALTH = 100;
-
+    private int currentFrame =0;
     private int Score = 0;
     private int currentPower;
     public  float shotTimer;
+    private Animate an;
 
 
     public Player(float x, float y, ID id, Handler handler) {
         super(x, y, id,handler);
         currentPower =2;
         shotTimer =0;
+        im = new BufferedImage[2];
+
 
         try {
             // only way files ever seem to load so use url which starts in src than specify res and specific files if needed
             URL url = this.getClass().getClassLoader().getResource("res/player.png");
-            im = ImageIO.read(url);
+            sheet = ImageIO.read(url);
         } catch (Exception e) {
             System.out.println(e);
         }
+
+
+        im[0] = sheet.getSubimage(0,0,32,32);
+        im[1] = sheet.getSubimage(32,0,32,32);
+        an = new Animate(im);
 
 
     }
@@ -59,7 +69,9 @@ public class Player extends GameObject {
         Score += score;
     }
 
-    public BufferedImage getIm() {
+
+
+    public BufferedImage[] getIm() {
         return im;
     }
 
@@ -120,8 +132,15 @@ public class Player extends GameObject {
 
 
         //g.setColor(Color.BLACK);
+
         g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
-        g.drawImage(im, (int) x, (int) y, null);
+        g.drawImage(an.getFrame(currentFrame), (int) x, (int) y, null);
+        if(currentFrame ==0)
+        currentFrame++;
+        else
+            currentFrame--;
+
+
 
 
     }
@@ -129,7 +148,7 @@ public class Player extends GameObject {
     @Override
     public Rectangle getBounds() {
 
-        return new Rectangle((int) x, (int) y, im.getWidth(), im.getHeight());
+        return new Rectangle((int) x, (int) y, im[0].getWidth(), im[0].getHeight());
     }
 
 

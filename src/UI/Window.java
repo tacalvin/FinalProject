@@ -11,7 +11,7 @@ import java.awt.*;
 public class Window extends Canvas {
 
 
-    private static final long serialVersionUID = -6818686894060817625L;
+    private static final long serialVersionUID = 3907742937199667657L;
 
     public Window(int width, int height, String title, Game game) {
 
