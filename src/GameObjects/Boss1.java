@@ -10,15 +10,16 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 
 /**
- * Created by 1817172 on 4/28/2015.
+ * Created by 1817172 on 4/30/2015.
  */
-public class FastEnemy extends GameObject
+public class Boss1 extends GameObject
 {
+    private int HEALTH = 1000;
     private BufferedImage im;
-    public FastEnemy(float x, float y, ID id, Handler handler) {
+    public Boss1(float x, float y, ID id, Handler handler) {
         super(x, y, id, handler);
 
-        URL url = this.getClass().getClassLoader().getResource("res/Fast Enemy.png");
+        URL url = this.getClass().getClassLoader().getResource("res/Boss1.png");
         try {
             im = ImageIO.read(url);
         }
@@ -26,8 +27,9 @@ public class FastEnemy extends GameObject
         {
             System.out.println(e);
         }
-        velY = 15;
-        velX = 15;
+
+        velY = 5;
+        velX = 5;
     }
     private void collision()
     {
@@ -36,16 +38,16 @@ public class FastEnemy extends GameObject
             if (temp.getId() == ID.BULLET) {
                 //checks for collisions of player and enemies
                 if (getBounds().intersects(temp.getBounds())) {
-                    handler.removeObject(this);
-                    handler.removeObject(temp);
-                    handler.addPoint(100);
-//                    if(HUD.HEALTH ==0)
-//                    {
-//                        System.out.println("You Lose");
-//                        System.exit(1);
+                    HEALTH-=50;
+                    y-=5;
+                    if(HEALTH <= 0)
+                    {
+
+                        handler.removeObject(this);
+                        handler.removeObject(temp);
+                        handler.addPoint(1000);
+                    }
 //
-//                    }
-                    //HUD.HEALTH -= 2;
 
                 }
             }

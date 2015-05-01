@@ -1,10 +1,7 @@
 package Main;
 
-import GameLogic.Spawn;
 import States.GameStateManager;
-import States.Handler;
-import UI.BackGround;
-import UI.HUD;
+import UI.*;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -40,7 +37,7 @@ public class Game extends Canvas implements Runnable {
 //        handler = new Handler();
 //        hud = new HUD();
 //        backGround = new BackGround();
-        new Window(WIDTH, HEIGHT, "Game Is Running", this);
+        new UI.Window(WIDTH, HEIGHT, "Game Is Running", this);
 
 
     }

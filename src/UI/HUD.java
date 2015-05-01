@@ -2,6 +2,7 @@ package UI;
 
 import GameObjects.Player;
 import Main.Game;
+import States.Handler;
 
 import java.awt.*;
 
@@ -20,12 +21,15 @@ public class HUD {
     private float GreenValue = 255;
     private Player player;
 
-    private int level = 1;
+    private int level;
     private int HEALTH;
     private int Score;
-    public HUD(Player player)
+    private Handler handler;
+    public HUD(Player player, Handler h)
     {
         this.player = player;
+        this.handler = h;
+        level = handler.getLevel();
         HEALTH = player.getHEALTH();
         Score = player.getScore();
     }
@@ -35,7 +39,7 @@ public class HUD {
 
         HEALTH = player.getHEALTH();
         Score = player.getScore();
-
+        level = handler.getLevel();
         HEALTH = (int)Game.clamp(HEALTH, 0, 100);
         GreenValue = Game.clamp(GreenValue, 0, 255);
         GreenValue = HEALTH * 2;
@@ -49,13 +53,7 @@ public class HUD {
 
 
 
-    public int getLevel() {
-        return level;
-    }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     public void render(Graphics g) {
         g.setColor(Color.GRAY);

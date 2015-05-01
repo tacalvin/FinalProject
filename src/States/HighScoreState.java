@@ -42,6 +42,7 @@ public class HighScoreState extends GameState {
 
 
         font = new Font("arial",1,30);
+        g.setFont(font);
 
         for(int i = 0; i < highScores.length; i++)
         {

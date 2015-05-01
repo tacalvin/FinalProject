@@ -27,22 +27,43 @@ public class Handler extends GameState {
     private Spawn ofSatan;
     private HUD hud;
     private Save save;
+    private int level;
+    private Player player;
+    private float time;
 
 
     public Handler(GameStateManager game,Save save) {
         super(game);
         this.save = save;
         ofSatan = new Spawn(this);
-        Player player = new Player(Game.WIDTH / 2, Game.HEIGHT / 2, ID.Player, this);
+        level = 1;
+        time =0;
+        player = new Player(Game.WIDTH / 2, Game.HEIGHT / 2, ID.Player, this);
 
-        hud = new HUD(player);
+        hud = new HUD(player,this);
         object.add(player);
 
 
     }
 
+    public float getTime() {
+        return time;
+    }
+
+    public void setTime(float time) {
+        this.time = time;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     public void tick() {
+        time+= .1f;
 
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
@@ -94,6 +115,11 @@ public class Handler extends GameState {
             }
         }
 
+    }
+
+    public int getLevel()
+    {
+     return level;
     }
 
 
