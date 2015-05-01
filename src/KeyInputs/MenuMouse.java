@@ -26,13 +26,13 @@ public class MenuMouse extends MouseAdapter {
         int mx = e.getX();
         int my = e.getY();
         if (mouseOver(mx, my, (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) - 25, 200, 50)) {
-            menu.setCurrentSelection(1);
-            menu.selectState();
+            menu.selectState(1);
+
         }
 
         if (mouseOver(mx, my, (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2)+30 , 200, 50)) {
-            menu.setCurrentSelection(2);
-            menu.selectState();
+
+            menu.selectState(2);
         }
 
 

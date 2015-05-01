@@ -21,7 +21,9 @@ public abstract class GameState {
 
     public abstract void render(Graphics g);
 
-    public abstract KeyListener getKeyListener();
+
+
+
 
     public abstract MouseListener getMouseListener();
 

@@ -89,9 +89,6 @@ public class GameStateManager {
         gameState.render(g);
     }
 
-    public KeyListener getKeyinputListener() {
-        return gameState.getKeyListener();
-    }
 
     public MouseListener getMouseinputListener() {
         return gameState.getMouseListener();

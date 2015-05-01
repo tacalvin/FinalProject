@@ -1,9 +1,11 @@
 package States;
 
+import KeyInputs.Keyboard;
 import KeyInputs.NameInput;
 import Main.Game;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -13,19 +15,27 @@ import java.util.ArrayList;
  */
 public class NameSelect extends GameState
 {
-    private char[] name;
+    private char[] nameA;
+    private ArrayList<Character> name = new ArrayList<Character>();
 
     public NameSelect(GameStateManager gsm)
     {
         super(gsm);
-        name = new char[1];
+
+
+    }
+
+
+    private void keyInput()
+    {
+
 
     }
 
     @Override
     public void tick()
     {
-
+        keyInput();
     }
 
     @Override
@@ -43,9 +53,9 @@ public class NameSelect extends GameState
 
         g.drawString("Please Enter Name", (Game.WIDTH / 2)-100, Game.HEIGHT / 2);
         String ren = "";
-        for(int i =0; i < name.length;i++)
+        for(int i =0; i < nameA.length;i++)
         {
-            ren += name[i];
+            ren += nameA[i];
             g.drawString(ren,Game.WIDTH / 2, (Game.HEIGHT / 2)+100);
         }
 
@@ -56,17 +66,17 @@ public class NameSelect extends GameState
 
     public void renderName(ArrayList<Character> nameChar)
     {
-        name = new char[nameChar.size()];
-        for(int i =0; i < name.length; i++)
+        nameA = new char[nameChar.size()];
+        for(int i =0; i < nameA.length; i++)
         {
-            name[i] = nameChar.get(i);
+            nameA[i] = nameChar.get(i);
         }
     }
 
     public void createName()
     {
 
-        gsm.setName(new String(name));
+        gsm.setName(new String(nameA));
         gsm.setNameSelected(true);
         gsm.setState(gsm.PLAY);
 
@@ -74,10 +84,7 @@ public class NameSelect extends GameState
     }
 
 
-    @Override
-    public KeyListener getKeyListener() {
-        return new NameInput(this);
-    }
+
 
     @Override
     public MouseListener getMouseListener() {

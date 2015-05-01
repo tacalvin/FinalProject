@@ -1,12 +1,12 @@
 package States;
 
-import KeyInputs.MenuInputs;
+import KeyInputs.Keyboard;
+
 import KeyInputs.MenuMouse;
 import Main.Game;
-import States.Handler;
 
 import java.awt.*;
-import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseListener;
 
 /**
@@ -14,33 +14,30 @@ import java.awt.event.MouseListener;
  */
 public class MENU extends GameState {
     private Handler handler;
-    private int CurrentSelection = 0;
+    private int selected = 1;
+    private boolean up = false;
+    private boolean down = false;
 
     public MENU(GameStateManager gsm) {
         super(gsm);
     }
 
 
-    public void incrementSelection() {
-        if (CurrentSelection < 2)
-            CurrentSelection++;
-    }
 
-    public void setCurrentSelection(int x) {
-        CurrentSelection = x;
-    }
+
+
 
     public void selectState() {
-        if (CurrentSelection == 1)
-            gsm.setState(gsm.PLAY);
-        if(CurrentSelection == 2)
-            gsm.setState(gsm.HIGHSCORE);
+        if (selected == 1) gsm.setState(gsm.PLAY);
+        if (selected == 2) gsm.setState(gsm.HIGHSCORE);
     }
 
-    public void decreaseSelection() {
-        if (CurrentSelection >= 0)
-            CurrentSelection--;
+    public void selectState(int select) {
+        if (select == 1) gsm.setState(gsm.PLAY);
+        if (select == 2) gsm.setState(gsm.HIGHSCORE);
     }
+
+
 
     public void render(Graphics g) {
         Font font = new Font("arial", 1, 50);
@@ -49,10 +46,9 @@ public class MENU extends GameState {
         g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
 
 
-        g.setColor(Color.BLUE);
+        g.setColor(Color.GRAY);
         //Play
-        if (CurrentSelection == 1)
-            g.setColor(Color.RED);
+        if (selected == 1) g.setColor(Color.RED);
         g.fillRect((Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) - 25, 200, 50);
 
         //Menu Title
@@ -65,27 +61,60 @@ public class MENU extends GameState {
 
         //name
         //Play
-        g.setColor(Color.BLUE);
-        if (CurrentSelection == 2)
-            g.setColor(Color.RED);
+        g.setColor(Color.GRAY);
+        if (selected == 2) g.setColor(Color.RED);
 
-        g.fillRect((Game.WIDTH / 2) - 100, (Game.HEIGHT / 2)+30 , 200, 50);
+        g.fillRect((Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) + 30, 200, 50);
 
         //setName
         font = new Font("arial", 1, 36);
         g.setFont(font);
         g.setColor(Color.WHITE);
-        g.drawString("HighScores", (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2)+75);
+        g.drawString("HighScores", (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) + 75);
     }
 
     public void tick() {
+        keyInput();
+
+    }
+
+
+    private void keyInput() {
+
+        if (Keyboard.isKeyDown(KeyEvent.VK_DOWN)) {
+            if (!up) {
+                up = true;
+                if (selected + 1 > 2) {
+                    selected = 2;
+                } else {
+                    selected++;
+                }
+            }
+        } else {
+            up = false;
+        }
+
+        if (Keyboard.isKeyDown(KeyEvent.VK_UP)) {
+            if (!down) {
+                down = true;
+                if (selected - 1 < 0) {
+                    selected = 1;
+                } else {
+                    selected--;
+                }
+            }
+        } else {
+            down = false;
+        }
+
+
+
+        if (Keyboard.isKeyDown(KeyEvent.VK_ENTER)) selectState();
 
     }
 
     @Override
-    public KeyListener getKeyListener() {
-        return new MenuInputs(gsm);
-    }
+
 
     public MouseListener getMouseListener() {
         return new MenuMouse(this);

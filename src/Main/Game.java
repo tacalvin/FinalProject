@@ -1,9 +1,12 @@
 package Main;
 
+import KeyInputs.Keyboard;
 import States.GameStateManager;
 import UI.*;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 
 /**
@@ -29,7 +32,9 @@ public class Game extends Canvas implements Runnable {
         gsm = new GameStateManager();
 
 
-        this.addKeyListener(gsm.getKeyinputListener());
+        this.addKeyListener(new GameKeyInput() );
+
+
         if (gsm.getMouseinputListener() != null) {
             this.addMouseListener(gsm.getMouseinputListener());
         }
@@ -61,12 +66,7 @@ public class Game extends Canvas implements Runnable {
     public void tick() {
 
         gsm.tick();
-        if (gsm.changedState) {
-            this.removeKeyListener(this.getKeyListeners()[0]);
-            this.addKeyListener(gsm.getKeyinputListener());
 
-            gsm.changedState = false;
-        }
 //        handler.tick();
 //        hud.tick();
         // backGround.tick();
@@ -141,6 +141,26 @@ public class Game extends Canvas implements Runnable {
 
     public static void main(String[] args) {
         new Game(900);
+    }
+
+    private class GameKeyInput extends KeyAdapter
+    {
+        public void keyPressed(KeyEvent event) {
+            Keyboard.setState(event.getKeyCode(), true);
+        }
+
+        @Override
+        public void keyReleased(KeyEvent event) {
+            Keyboard.setState(event.getKeyCode(), false);
+        }
+
+        @Override
+        public void keyTyped(KeyEvent e)
+        {
+            e.getKeyChar();
+
+        }
+
     }
 
 

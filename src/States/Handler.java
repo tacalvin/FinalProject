@@ -131,10 +131,11 @@ public class Handler extends GameState {
         this.object.remove(object);
     }
 
-    @Override
-    public KeyAdapter getKeyListener() {
-        return new GameKeyInput(gsm);
-    }
+
+
+
+
+
 
     @Override
     public MouseListener getMouseListener() {

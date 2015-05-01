@@ -54,10 +54,6 @@ public class GameOverState extends GameState
     }
 
 
-    @Override
-    public KeyListener getKeyListener() {
-        return new ScoreInput(gsm);
-    }
 
     @Override
     public MouseListener getMouseListener() {
