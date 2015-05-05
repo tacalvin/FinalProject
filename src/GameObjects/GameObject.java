@@ -22,6 +22,13 @@ public abstract class GameObject {
         this.handler = handler;
     }
 
+    public void setVelY(float velY) {
+        this.velY = velY;
+    }
+    public void setVelX(float velX) {
+        this.velX = velX;
+    }
+
     public float getX() {
         return x;
     }
@@ -50,17 +57,13 @@ public abstract class GameObject {
         return velX;
     }
 
-    public void setVelX(float velX) {
-        this.velX = velX;
-    }
+
 
     public float getVelY() {
         return velY;
     }
 
-    public void setVelY(float velY) {
-        this.velY = velY;
-    }
+
 
     public abstract void tick();
 

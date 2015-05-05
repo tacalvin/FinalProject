@@ -12,6 +12,7 @@ import States.Handler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;
@@ -29,6 +30,7 @@ public class Player extends GameObject {
     private int currentPower;
     public  float shotTimer;
     private Animate an;
+    private int speed;
 
 
     public Player(float x, float y, ID id, Handler handler) {
@@ -46,10 +48,30 @@ public class Player extends GameObject {
             System.out.println(e);
         }
 
+        speed = 10;
 
         im[0] = sheet.getSubimage(0,0,32,32);
         im[1] = sheet.getSubimage(32,0,32,32);
         an = new Animate(im);
+
+
+    }
+
+    public void move(int e)
+    {
+        if(e == KeyEvent.VK_W)
+            y -= speed;
+
+        if(e == KeyEvent.VK_S)
+            y += speed;
+
+        if(e == KeyEvent.VK_A)
+            x -= speed;
+
+        if(e == KeyEvent.VK_W)
+            x += speed;
+
+
 
 
     }
@@ -119,13 +141,17 @@ public class Player extends GameObject {
     public void tick() {
         shotTimer -=.01f;
 
-        x += velX;
-        y += velY;
+
+
+
         x = Game.clamp((int) x, 0, Game.WIDTH - 37);
         y = Game.clamp((int) y, 0, Game.HEIGHT - 60);
 
         collision();
     }
+
+
+
 
     @Override
     public void render(Graphics g) {
@@ -150,6 +176,8 @@ public class Player extends GameObject {
 
         return new Rectangle((int) x, (int) y, im[0].getWidth(), im[0].getHeight());
     }
+
+
 
 
 

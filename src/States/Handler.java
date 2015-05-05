@@ -2,16 +2,16 @@ package States;
 
 import GameLogic.ID;
 import GameLogic.Spawn;
-import GameObjects.BasicEnemy;
 import GameObjects.GameObject;
 import GameObjects.Player;
-import KeyInputs.GameKeyInput;
+
+import KeyInputs.Keyboard;
 import Main.Game;
 import UI.HUD;
 
 import java.awt.*;
 import java.awt.event.KeyAdapter;
-import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
@@ -44,6 +44,7 @@ public class Handler extends GameState {
         object.add(player);
 
 
+
     }
 
     public float getTime() {
@@ -62,9 +63,35 @@ public class Handler extends GameState {
         this.level = level;
     }
 
+    public void input()
+    {
+
+
+        if(Keyboard.isKeyDown(KeyEvent.VK_SPACE))
+            getPlayer().shoot();
+
+        //takes a keyevent and moves based on keycode
+        if(Keyboard.isKeyDown(KeyEvent.VK_W))
+        getPlayer().move(KeyEvent.VK_W);
+        if(Keyboard.isKeyDown(KeyEvent.VK_A))
+            getPlayer().move(KeyEvent.VK_A);
+        if(Keyboard.isKeyDown(KeyEvent.VK_S))
+            getPlayer().move(KeyEvent.VK_S);
+        if(Keyboard.isKeyDown(KeyEvent.VK_D))
+            getPlayer().move(KeyEvent.VK_D);
+
+
+
+
+
+
+
+
+    }
+
     public void tick() {
         time+= .1f;
-
+        input();
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
             tempO.tick();
@@ -80,6 +107,7 @@ public class Handler extends GameState {
             }
 
         }
+
         hud.tick();
         ofSatan.tick();
 
@@ -131,14 +159,31 @@ public class Handler extends GameState {
         this.object.remove(object);
     }
 
-
-
-
-
-
+    @Override
+    public KeyAdapter getKeyListener() {
+        return new GameKeyInput();
+    }
 
     @Override
     public MouseListener getMouseListener() {
         return null;
+    }
+
+    private class GameKeyInput extends KeyAdapter
+    {
+        @Override
+        public void keyTyped(KeyEvent e) {
+            Keyboard.setState(e.getKeyCode(),true);
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            Keyboard.setState(e.getKeyCode(), true);
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            Keyboard.setState(e.getKeyCode(),false);
+        }
     }
 }
