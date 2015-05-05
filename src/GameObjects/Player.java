@@ -3,23 +3,18 @@ package GameObjects;
 
 import Frameworks.Animate;
 import GameLogic.ID;
-
 import Main.Game;
 import ShootPattern.BasicShot;
 import ShootPattern.Spread;
 import States.Handler;
 
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.net.URL;
 
-/**
- * Created by Calvin Ta on 3/28/2015.
- */
+
 public class Player extends GameObject {
     private BufferedImage[] im;
     private BufferedImage sheet;
@@ -68,7 +63,7 @@ public class Player extends GameObject {
         if(e == KeyEvent.VK_A)
             x -= speed;
 
-        if(e == KeyEvent.VK_W)
+        if(e == KeyEvent.VK_D)
             x += speed;
 
 

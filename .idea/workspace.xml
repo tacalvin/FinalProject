@@ -1,51 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7896bfff-98a6-453b-abc6-bda6d694538e" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\FinalProject\FinalProject\out\production\FinalProject\KeyInputs\GameKeyInput.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\FinalProject\FinalProject\out\production\FinalProject\Main\Game$GameKeyInput.class" afterPath="" />
-      <change type="DELETED" beforePath="E:\FinalProject\FinalProject\src\KeyInputs\GameKeyInput.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/Main/Game.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/Main/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/GameObject.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/GameObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/GameOverState.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/GameOverState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/GameState.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/GameState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/GameStateManager.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/GameStateManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/Handler.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/Handler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/MENU.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/MENU.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/KeyInputs/MenuMouse.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/KeyInputs/MenuMouse.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/NameSelect.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/NameSelect.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Player.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="$PROJECT_DIR$/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frameworks/Animate.java" afterPath="$PROJECT_DIR$/src/Frameworks/Animate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UI/BackGround.java" afterPath="$PROJECT_DIR$/src/UI/BackGround.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" afterPath="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShootPattern/BasicShot.java" afterPath="$PROJECT_DIR$/src/ShootPattern/BasicShot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Boss1.java" afterPath="$PROJECT_DIR$/src/GameObjects/Boss1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Bullet.java" afterPath="$PROJECT_DIR$/src/GameObjects/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/FastEnemy.java" afterPath="$PROJECT_DIR$/src/GameObjects/FastEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main/Game.java" afterPath="$PROJECT_DIR$/src/Main/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Game.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Game.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/GameData.java" afterPath="$PROJECT_DIR$/src/States/GameData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/GameObject.java" afterPath="$PROJECT_DIR$/src/GameObjects/GameObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/GameOverState.java" afterPath="$PROJECT_DIR$/src/States/GameOverState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/GameState.java" afterPath="$PROJECT_DIR$/src/States/GameState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/GameStateManager.java" afterPath="$PROJECT_DIR$/src/States/GameStateManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UI/HUD.java" afterPath="$PROJECT_DIR$/src/UI/HUD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/Handler.java" afterPath="$PROJECT_DIR$/src/States/Handler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/HighScoreState.java" afterPath="$PROJECT_DIR$/src/States/HighScoreState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameLogic/ID.java" afterPath="$PROJECT_DIR$/src/GameLogic/ID.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Game/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/artifacts/Game/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/MENU.java" afterPath="$PROJECT_DIR$/src/States/MENU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KeyInputs/MenuMouse.java" afterPath="$PROJECT_DIR$/src/KeyInputs/MenuMouse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/NameSelect.java" afterPath="$PROJECT_DIR$/src/States/NameSelect.java" />
+    <list default="true" id="7896bfff-98a6-453b-abc6-bda6d694538e" name="Default" comment="Buggy new control system using hashmaps for player control inspired by BlockCat&#10;EDIT:Fixed a minor bug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Player.java" afterPath="$PROJECT_DIR$/src/GameObjects/Player.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/States/Save.java" afterPath="$PROJECT_DIR$/src/States/Save.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KeyInputs/ScoreInput.java" afterPath="$PROJECT_DIR$/src/KeyInputs/ScoreInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameLogic/Spawn.java" afterPath="$PROJECT_DIR$/src/GameLogic/Spawn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShootPattern/Spread.java" afterPath="$PROJECT_DIR$/src/ShootPattern/Spread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UI/Window.java" afterPath="$PROJECT_DIR$/src/UI/Window.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FinalProject.iws" />
@@ -133,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.419355">
-              <caret line="64" column="22" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.3328336">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,10 +102,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameObjects/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39013454">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="e#752#753#0" expanded="true" />
@@ -196,6 +153,9 @@
     </option>
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info repo="$PROJECT_DIR$" source="Alternate-KeyInput" target-remote="origin" target-branch="master" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -773,7 +733,13 @@
       <option name="project" value="LOCAL" />
       <updated>1430439715134</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Buggy new control system using hashmaps for player control inspired by BlockCat&#10;">
+      <created>1430789191794</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1430789191794</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -782,7 +748,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21041214" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21041214" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899868" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -823,7 +789,10 @@
     <MESSAGE value="Added New Enemy" />
     <MESSAGE value="Sync all resources" />
     <MESSAGE value="Boss1 Added&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Boss1 Added&#10;" />
+    <MESSAGE value="Buggy new control system using hashmaps for player control inspired by BlockCat&#10;" />
+    <MESSAGE value="Buggy new control system using hashmaps for player control inspired by BlockCat&#10;EDIT:Fixed a minor bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buggy new control system using hashmaps for player control inspired by BlockCat&#10;EDIT:Fixed a minor bug" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1047,6 +1016,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1070,6 +1040,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,6 +1065,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1108,6 +1082,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,6 +1109,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1153,6 +1131,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1225,23 +1206,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.419355">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObjects/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39013454">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
           <folding>
             <element signature="e#752#753#0" expanded="true" />
             <element signature="e#778#779#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3328336">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
