@@ -8,6 +8,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.net.URL;
+import java.util.Random;
 
 /**
  * Created by 1817172 on 3/30/2015.
@@ -16,6 +17,8 @@ public class BasicEnemy extends GameObject
 {
 
     private BufferedImage im;
+    private boolean moved = false;//true when enemy is moved down from screen
+
     public BasicEnemy(float x, float y, ID id, Handler handler) {
         super(x, y, id, handler);
 
@@ -57,8 +60,15 @@ public class BasicEnemy extends GameObject
     @Override
     public void tick()
     {
+        Random r = new Random();
         x += velX;
-        y += velY;
+        if(moved == false)
+        {
+            for(int i =0; i <r.nextInt(20)+15;i++)
+            y += velY;
+
+            moved = true;
+        }
 
 
 
@@ -69,6 +79,11 @@ public class BasicEnemy extends GameObject
             velX *= -1;
 
         collision();
+    }
+
+    public void shoot()
+    {
+        //TODO: Shoot towards player position
     }
 
     @Override

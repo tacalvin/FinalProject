@@ -10,7 +10,7 @@ import States.Handler;
  */
 public class Spread
 {
-    public static float timer = 10f;
+
     public static void shoot(Handler handler, Player player)
     {
         Bullet b1 = new Bullet(player.getX()+ player.getIm()[0].getWidth()/2,player.getY() + player.getIm()[0].getHeight()/2, ID.BULLET,handler);

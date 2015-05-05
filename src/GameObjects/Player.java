@@ -6,6 +6,7 @@ import GameLogic.ID;
 import Main.Game;
 import ShootPattern.BasicShot;
 import ShootPattern.Spread;
+import ShootPattern.TriShot;
 import States.Handler;
 
 import javax.imageio.ImageIO;
@@ -30,7 +31,7 @@ public class Player extends GameObject {
 
     public Player(float x, float y, ID id, Handler handler) {
         super(x, y, id,handler);
-        currentPower =2;
+        currentPower =3;
         shotTimer =0;
         im = new BufferedImage[2];
 
@@ -129,6 +130,13 @@ public class Player extends GameObject {
                     shotTimer = .1f;
                 }
                 break;
+            case 3:
+                if(this.shotTimer <0) {
+                    TriShot.shoot(handler, this);
+                    shotTimer = .1f;
+                }
+                break;
+
         }
     }
 
