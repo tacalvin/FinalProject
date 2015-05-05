@@ -84,6 +84,8 @@ public class BasicEnemy extends GameObject
     public void shoot()
     {
         //TODO: Shoot towards player position
+
+        // possibly spawn enemy bullet using sqrt of x^2 + y^2
     }
 
     @Override

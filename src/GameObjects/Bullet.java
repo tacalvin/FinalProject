@@ -19,7 +19,7 @@ public class Bullet extends GameObject
     public Bullet(float x, float y, ID id, Handler handler)
     {
         super(x, y, id,handler);
-        URL url = this.getClass().getClassLoader().getResource("res/bullet.png");
+        URL url = this.getClass().getClassLoader().getResource("res/Fire.png");
         try {
             im = ImageIO.read(url);
         }
@@ -27,6 +27,7 @@ public class Bullet extends GameObject
         {
             System.out.println(e);
         }
+        im = im.getSubimage(0,0,16,16);
 
         velY = -25;
     }
