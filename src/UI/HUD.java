@@ -9,8 +9,6 @@ import java.awt.*;
 /**
  * Created by 1817172 on 3/27/2015.
  */
-import java.awt.*;
-import java.util.Random;
 
 /**
  * Created by Calvin Ta on 3/17/2015.
@@ -58,13 +56,19 @@ public class HUD {
     public void render(Graphics g) {
         g.setColor(Color.GRAY);
         g.fillRect(15, 15, 200, 32);
-        g.setColor(new Color(75, (int)GreenValue, 0));
-        g.fillRect(15, 15, (int)HEALTH * 2, 32);
+        g.setColor(new Color(75, (int) GreenValue, 0));
+        g.fillRect(15, 15, (int) HEALTH * 2, 32);
 
         g.setColor(Color.white);
         g.drawRect(15, 15, 200, 32);
 
         g.drawString("Score: " + Score, 15, 58);
         g.drawString("Level: " + level, 15, 68);
+
+        if(player.specialTimer <= 0)
+        g.drawString("Special Ready ", 15, 78);
+
+        else
+            g.drawString("Special Not Ready ", 15, 78);
     }
 }

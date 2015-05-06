@@ -16,18 +16,20 @@ public class Burst
         Bullet[] b = new Bullet[18];
         //corresponds to unit circle
         System.out.println("Reached");
-        for(int i =0; i < 16; i++)
+        for(int j =0; j < 5; j++)
         {
-            b[i] = new Bullet(player.getX()+i,player.getY(),ID.BULLET,handler);
-            if(i < 9)
+            for (int i = 0; i < 18; i++)
             {
-                b[i].setVelX(-5);
+                b[i] = new Bullet(player.getX() - 165 + (i * 20), player.getY(), ID.BULLET, handler);
+                if (i < 9)
+                {
+                    b[i].setVelX(-5);
+                } else
+                {
+                    b[i].setVelX(5);
+                }
+                handler.addObject(b[i]);
             }
-                else
-            {
-                b[i].setVelX(5);
-            }
-            handler.addObject(b[i]);
         }
 
 

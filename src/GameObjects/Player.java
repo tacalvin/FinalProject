@@ -28,6 +28,7 @@ public class Player extends GameObject {
     private int currentSpecial;
     private int currentPower;
     public  float shotTimer;
+    public  float specialTimer;
     private Animate an;
     private int speed;
 
@@ -37,6 +38,7 @@ public class Player extends GameObject {
         currentPower =3;
         currentSpecial =1;
         shotTimer =0;
+        specialTimer =0;
         im = new BufferedImage[2];
 
 
@@ -133,7 +135,11 @@ public class Player extends GameObject {
         switch (cSpecial)
         {
             case 1:
-                Burst.shoot(handler,this);
+                if(this.specialTimer <0) {
+                    Burst.shoot(handler,this);
+                    specialTimer = 10f;
+                }
+
         }
     }
 
@@ -166,6 +172,8 @@ public class Player extends GameObject {
     @Override
     public void tick() {
         shotTimer -=.01f;
+        specialTimer -= .01f;
+
 
 
 
