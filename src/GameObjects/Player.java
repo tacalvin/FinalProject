@@ -7,6 +7,7 @@ import Main.Game;
 import ShootPattern.BasicShot;
 import ShootPattern.Spread;
 import ShootPattern.TriShot;
+import Specials.Burst;
 import States.Handler;
 
 import javax.imageio.ImageIO;
@@ -23,6 +24,8 @@ public class Player extends GameObject {
     private int HEALTH = 100;
     private int currentFrame =0;
     private int Score = 0;
+
+    private int currentSpecial;
     private int currentPower;
     public  float shotTimer;
     private Animate an;
@@ -32,6 +35,7 @@ public class Player extends GameObject {
     public Player(float x, float y, ID id, Handler handler) {
         super(x, y, id,handler);
         currentPower =3;
+        currentSpecial =1;
         shotTimer =0;
         im = new BufferedImage[2];
 
@@ -119,6 +123,18 @@ public class Player extends GameObject {
     public void shoot()
     {
         this.loadShootPattern(currentPower);
+    }
+    public void useSpecial()
+    {
+        this.loadSpecial(currentSpecial);
+    }
+    private void loadSpecial(int cSpecial)
+    {
+        switch (cSpecial)
+        {
+            case 1:
+                Burst.shoot(handler,this);
+        }
     }
 
     private void loadShootPattern(int currentPower)

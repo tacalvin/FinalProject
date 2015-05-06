@@ -80,6 +80,8 @@ public class Handler extends GameState {
             getPlayer().move(KeyEvent.VK_S);
         if(Keyboard.isKeyDown(KeyEvent.VK_D))
             getPlayer().move(KeyEvent.VK_D);
+        if(Keyboard.isKeyDown(KeyEvent.VK_Q))
+            getPlayer().useSpecial();
 
 
 
