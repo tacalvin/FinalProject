@@ -41,12 +41,12 @@ public class NameSelect extends GameState
         g.setFont(font);
 
 
-        g.drawString("Please Enter Name", (Game.WIDTH / 2)-100, Game.HEIGHT / 2);
+        g.drawString("Please Enter Name", (Game.WIDTH / 2)-200, Game.HEIGHT / 2-100);
         String ren = "";
         for(int i =0; i < name.length;i++)
         {
             ren += name[i];
-            g.drawString(ren,Game.WIDTH / 2, (Game.HEIGHT / 2)+100);
+            g.drawString(ren,(Game.WIDTH / 2)-100, (Game.HEIGHT / 2));
         }
 
 

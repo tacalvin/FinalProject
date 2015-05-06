@@ -96,11 +96,18 @@ public class Player extends GameObject {
     private void collision() {
         for (int i = 0; i < handler.object.size(); i++) {
             GameObject temp = handler.object.get(i);
-            if (temp.getId() == ID.BasicEnemy) {
+            if (temp.getId() == ID.BasicEnemy || temp.getId() == ID.EnemyBullet) {
                 //checks for collisions of player and enemies
-                if (getBounds().intersects(temp.getBounds())) {
+                if (getBounds().intersects(temp.getBounds()) && temp.getId() == ID.BasicEnemy) {
 
                    HEALTH -= 2;
+
+                }
+
+                else if (getBounds().intersects(temp.getBounds()) && temp.getId() == ID.EnemyBullet) {
+
+                    HEALTH -= 1;
+                    handler.removeObject(temp);
 
                 }
             }

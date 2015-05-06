@@ -15,7 +15,7 @@ import java.net.URL;
 public class Bullet extends GameObject
 {
     private BufferedImage im;
-    private Handler handler;
+
     public Bullet(float x, float y, ID id, Handler handler)
     {
         super(x, y, id,handler);

@@ -6,5 +6,6 @@ package GameLogic;
 public enum ID {
     Player,
     BULLET,
+    EnemyBullet,
     BasicEnemy;
 }

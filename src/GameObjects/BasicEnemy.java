@@ -17,6 +17,7 @@ public class BasicEnemy extends GameObject
 {
 
     private BufferedImage im;
+    private float shotTime = 1f;
     private boolean moved = false;//true when enemy is moved down from screen
 
     public BasicEnemy(float x, float y, ID id, Handler handler) {
@@ -62,13 +63,21 @@ public class BasicEnemy extends GameObject
     {
         Random r = new Random();
         x += velX;
+        shotTime -= .01f;
+        if(shotTime <= 0)
+        {
+            shoot();
+            shotTime = 1f;
+        }
         if(moved == false)
         {
             for(int i =0; i <r.nextInt(20)+15;i++)
             y += velY;
 
             moved = true;
+
         }
+
 
 
 
@@ -84,7 +93,19 @@ public class BasicEnemy extends GameObject
     public void shoot()
     {
         //TODO: Shoot towards player position
+        Bullet b = new Bullet(this.x +im.getWidth()/2,this.y+ im.getHeight()/2,ID.EnemyBullet,handler);
 
+        float diffx = x - handler.getPlayer().getX();
+        float diffy = y - handler.getPlayer().getY();
+        float distance = (float) Math.sqrt((x-handler.getPlayer().getX())*(x-handler.getPlayer().getX())+(y-handler.getPlayer().getY())*(y-handler.getPlayer().getY()));
+
+        float velX1 = ((-1 /distance) * diffx);
+        float velY1 = ((-1 /distance) * diffy);
+
+
+        b.setVelX(velX1 *5);
+        b.setVelY(velY1 *5);
+        handler.addObject(b);
         // possibly spawn enemy bullet using sqrt of x^2 + y^2
     }
 
@@ -97,5 +118,10 @@ public class BasicEnemy extends GameObject
     @Override
     public Rectangle getBounds() {
         return new Rectangle((int) x, (int) y, im.getWidth(), im.getHeight());
+    }
+
+    public Rectangle[] getBoundArray() {
+        Rectangle[] rec = new Rectangle[5];
+        return  rec;
     }
 }
