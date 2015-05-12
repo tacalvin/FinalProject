@@ -35,7 +35,7 @@ public class Player extends GameObject {
 
     public Player(float x, float y, ID id, Handler handler) {
         super(x, y, id,handler);
-        currentPower =3;
+        currentPower =1;
         currentSpecial =1;
         shotTimer =0;
         specialTimer =0;
@@ -57,6 +57,10 @@ public class Player extends GameObject {
         an = new Animate(im);
 
 
+    }
+
+    public void setCurrentPower(int currentPower) {
+        this.currentPower = currentPower;
     }
 
     public void move(int e)

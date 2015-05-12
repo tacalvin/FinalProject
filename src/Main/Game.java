@@ -36,7 +36,7 @@ public class Game extends Canvas implements Runnable {
 
 //        handler = new Handler();
 //        hud = new HUD();
-//        backGround = new BackGround();
+        backGround = new BackGround();
         new UI.Window(WIDTH, HEIGHT, "Game Is Running", this);
 
 
@@ -82,12 +82,9 @@ public class Game extends Canvas implements Runnable {
         }
 
         g = bs.getDrawGraphics();
+        backGround.render(g);
         gsm.render(g);
-//        backGround.render(g);
-//
-//
-//        handler.render(g);
-//        hud.render(g);
+
 
 
         g.dispose();
@@ -140,7 +137,7 @@ public class Game extends Canvas implements Runnable {
 
 
     public static void main(String[] args) {
-        new Game(900);
+        new Game(1280);
     }
 
 

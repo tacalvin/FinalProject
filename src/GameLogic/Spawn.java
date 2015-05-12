@@ -4,6 +4,7 @@ import GameObjects.BasicEnemy;
 import GameObjects.Boss1;
 import GameObjects.FastEnemy;
 import GameObjects.GameObject;
+import GameObjects.PowerUps.Trishotp;
 import Main.Game;
 import States.Handler;
 
@@ -50,6 +51,8 @@ public class Spawn {
             handler.setTime(0);
             for(int i = 0; i < handler.getLevel() * 2; i++)
             handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH-100),0,ID.BasicEnemy,handler));
+
+            
         }
 
         if(handler.getLevel() == 2 && handler.getTime() > 25f)

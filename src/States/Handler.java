@@ -24,7 +24,6 @@ public class Handler extends GameState {
     //class is going to loop through game objects to update and render
 
     public ArrayList<GameObject> object = new ArrayList<GameObject>();
-    public ArrayList<Bullet> bullets = new ArrayList<Bullet>();
     private Spawn ofSatan;
     private HUD hud;
     private Save save;
