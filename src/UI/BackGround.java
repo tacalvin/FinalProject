@@ -2,7 +2,10 @@ package UI;
 
 import Main.Game;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.net.URL;
 
 /**
  * Created by 1817172 on 3/27/2015.
@@ -14,23 +17,22 @@ public class BackGround {
      */
 
 
+    private BufferedImage im;
 
-
-
-
-
-
-
-
-
-
-
-
-
+    public BackGround() {
+        URL image = this.getClass().getClassLoader().getResource("res/background.jpeg");
+        try
+        {
+            im = ImageIO.read(image);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getCause());
+        }
+    }
 
     public void render(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+        g.drawImage(im,0,0,null);
     }
 
 

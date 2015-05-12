@@ -7,5 +7,6 @@ public enum ID {
     Player,
     BULLET,
     EnemyBullet,
+    PowerUP,
     BasicEnemy;
 }
