@@ -3,7 +3,7 @@ package States;
 import KeyInputs.MenuInputs;
 import KeyInputs.MenuMouse;
 import Main.Game;
-import States.Handler;
+import UI.BackGround;
 
 import java.awt.*;
 import java.awt.event.KeyListener;
@@ -15,9 +15,12 @@ import java.awt.event.MouseListener;
 public class MENU extends GameState {
     private Handler handler;
     private int CurrentSelection = 0;
+    private BackGround menuBack;
 
-    public MENU(GameStateManager gsm) {
+    public MENU(GameStateManager gsm)
+    {
         super(gsm);
+        menuBack = new BackGround("res/stuffhere.jpeg");
     }
 
 
@@ -45,8 +48,10 @@ public class MENU extends GameState {
     public void render(Graphics g) {
         Font font = new Font("arial", 1, 50);
         g.setFont(font);
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+
+        menuBack.render(g);
+
+
 
 
         g.setColor(Color.BLUE);

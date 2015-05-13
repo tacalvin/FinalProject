@@ -40,8 +40,7 @@ public class GameOverState extends GameState
     @Override
     public void render(Graphics g)
     {
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+
         g.setColor(Color.RED);
 
         Font font = new Font("arial", 1, 50);

@@ -1,7 +1,6 @@
 package Main;
 
 import States.GameStateManager;
-import UI.*;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -16,7 +15,7 @@ public class Game extends Canvas implements Runnable {
     private Graphics g;
     private boolean running;
 
-    private BackGround backGround;
+
     public static int WIDTH;
     public static int HEIGHT;
     private Thread thread;
@@ -36,7 +35,7 @@ public class Game extends Canvas implements Runnable {
 
 //        handler = new Handler();
 //        hud = new HUD();
-        backGround = new BackGround();
+
         new UI.Window(WIDTH, HEIGHT, "Game Is Running", this);
 
 
@@ -82,8 +81,9 @@ public class Game extends Canvas implements Runnable {
         }
 
         g = bs.getDrawGraphics();
-        backGround.render(g);
+
         gsm.render(g);
+
 
 
 

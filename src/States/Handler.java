@@ -2,11 +2,11 @@ package States;
 
 import GameLogic.ID;
 import GameLogic.Spawn;
-import GameObjects.Bullet;
 import GameObjects.GameObject;
 import GameObjects.Player;
 import KeyInputs.Keyboard;
 import Main.Game;
+import UI.BackGround;
 import UI.HUD;
 
 import java.awt.*;
@@ -30,10 +30,12 @@ public class Handler extends GameState {
     private int level;
     private Player player;
     private float time;
+    private BackGround gameBack;
 
 
     public Handler(GameStateManager game,Save save) {
         super(game);
+        gameBack = new BackGround("/res gameback url here");
         this.save = save;
         ofSatan = new Spawn(this);
         level = 1;
@@ -119,13 +121,15 @@ public class Handler extends GameState {
     public void render(Graphics g) {
 
 
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+        gameBack.render(g);
+
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
+
             tempO.render(g);
 
         }
+
         hud.render(g);
 
 

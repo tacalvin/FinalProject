@@ -1,7 +1,5 @@
 package UI;
 
-import Main.Game;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -19,8 +17,10 @@ public class BackGround {
 
     private BufferedImage im;
 
-    public BackGround() {
-        URL image = this.getClass().getClassLoader().getResource("res/background.jpeg");
+    public BackGround(String url) {
+        URL image = this.getClass().getClassLoader().getResource("res/background.jpg");
+        //use when images exist
+        //URL image = this.getClass().getClassLoader().getResource(url);
         try
         {
             im = ImageIO.read(image);

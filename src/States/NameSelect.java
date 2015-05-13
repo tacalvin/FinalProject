@@ -2,6 +2,7 @@ package States;
 
 import KeyInputs.NameInput;
 import Main.Game;
+import UI.BackGround;
 
 import java.awt.*;
 import java.awt.event.KeyListener;
@@ -14,11 +15,13 @@ import java.util.ArrayList;
 public class NameSelect extends GameState
 {
     private char[] name;
+    private BackGround nameBack;
 
     public NameSelect(GameStateManager gsm)
     {
         super(gsm);
         name = new char[1];
+        nameBack = new BackGround("res/pichere");
 
     }
 
@@ -33,8 +36,8 @@ public class NameSelect extends GameState
     {
 
 
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+
+        nameBack.render(g);
         g.setColor(Color.WHITE);
 
         Font font = new Font("arial", 1, 50);

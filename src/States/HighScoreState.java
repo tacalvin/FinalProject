@@ -29,8 +29,7 @@ public class HighScoreState extends GameState {
     @Override
     public void render(Graphics g)
     {
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+
         g.setColor(Color.WHITE);
         Font font = new Font("arial",1,60);
         g.setFont(font);
