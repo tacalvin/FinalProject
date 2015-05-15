@@ -197,7 +197,7 @@ public class Player extends GameObject {
 
         //g.setColor(Color.BLACK);
 
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
+//        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
         g.drawImage(an.getFrame(currentFrame), (int) x, (int) y, null);
         if(currentFrame ==0)
         currentFrame++;

@@ -96,6 +96,9 @@ public class Handler extends GameState {
     public void tick() {
         time+= .1f;
         input();
+
+        gameBack.tick();
+
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
             tempO.tick();
@@ -126,6 +129,7 @@ public class Handler extends GameState {
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
 
+//            if(tempO.getId() != ID.Player)
             tempO.render(g);
 
         }

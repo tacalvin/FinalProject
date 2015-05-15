@@ -120,8 +120,5 @@ public class BasicEnemy extends GameObject
         return new Rectangle((int) x, (int) y, im.getWidth(), im.getHeight());
     }
 
-    public Rectangle[] getBoundArray() {
-        Rectangle[] rec = new Rectangle[5];
-        return  rec;
-    }
+
 }
