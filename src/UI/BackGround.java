@@ -1,5 +1,7 @@
 package UI;
 
+import Main.Game;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -16,8 +18,10 @@ public class BackGround {
 
 
     private BufferedImage im;
-    int i = 10;//offset
-    int posX,posY;
+    private BufferedImage full;
+
+    int i = 100;//offset
+    int posX, posY, x, y;
 //    private  final int  MAX_WIDTH;
 //    private  final int MAX_HEIGHT;
 
@@ -25,44 +29,63 @@ public class BackGround {
         URL image = this.getClass().getClassLoader().getResource("res/background.jpg");
         posX = 0;
         posY = 0;
+        x = 0;
+        y = 0;
 //        MAX_HEIGHT = im.getHeight();
 //        MAX_WIDTH = im.getWidth();
         //use when images exist
         //URL image = this.getClass().getClassLoader().getResource(url);
-        try
-        {
-            im = ImageIO.read(image);
-        }
-        catch (Exception e)
-        {
+        try {
+
+            full = ImageIO.read(image);
+        } catch (Exception e) {
             System.out.println(e.getCause());
         }
+
+        im = full.getSubimage(0,0,Game.WIDTH,Game.HEIGHT);
     }
 
-    public void tick()
-    {
 
-        im = im.getSubimage(posX+i,posY+i,im.getWidth(),im.getHeight());
+    public BufferedImage getIm() {
+        return im;
+    }
+
+    public BufferedImage getFull() {
+        return full;
+    }
+
+    public void setIm(BufferedImage im) {
+        this.im = im;
+    }
+
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+
+    public void tick() {
+
+
+        im = full.getSubimage(posX, posY + i, Game.WIDTH, Game.HEIGHT);
+        i++;
 
     }
 
     public void render(Graphics g) {
-        g.drawImage(im,0,0,null);
+        g.drawImage(im, 0, 0, null);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

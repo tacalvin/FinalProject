@@ -30,12 +30,14 @@ public class Handler extends GameState {
     private int level;
     private Player player;
     private float time;
-    private BackGround gameBack;
+    private BackGround gameBack1,gameBack2;
+    private boolean bk1active, bk2active;
 
 
     public Handler(GameStateManager game,Save save) {
         super(game);
-        gameBack = new BackGround("/res gameback url here");
+        gameBack1 = new BackGround("/res gameback url here");
+        gameBack2 = new BackGround("/res/back.png");
         this.save = save;
         ofSatan = new Spawn(this);
         level = 1;
@@ -93,11 +95,34 @@ public class Handler extends GameState {
 
     }
 
-    public void tick() {
+    public void tick()
+    {
         time+= .1f;
         input();
 
-        gameBack.tick();
+        if(gameBack1.getPosY()+gameBack1.getIm().getHeight() < gameBack1.getFull().getHeight())
+        {
+            System.out.println("Ticking bk1");
+            bk1active = true;
+            bk2active = false;
+            gameBack1.tick();
+
+        }
+
+        else if(gameBack2.getPosY()+gameBack2.getIm().getHeight() < gameBack2.getFull().getHeight())
+        {
+            bk1active = false;
+            bk2active = true;
+            gameBack2.tick();
+        }
+
+        else
+        {
+            gameBack1.setPosX(0);
+            gameBack1.setPosY(0);
+            gameBack2.setPosX(0);
+            gameBack2.setPosY(0);
+        }
 
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
@@ -124,7 +149,13 @@ public class Handler extends GameState {
     public void render(Graphics g) {
 
 
-        gameBack.render(g);
+        if(bk1active && !bk2active )
+        {
+            System.out.println("Rendering bk1");
+            gameBack1.render(g);
+        }
+        else
+        gameBack2.render(g);
 
         for (int i = 0; i < object.size(); i++) {
             GameObject tempO = object.get(i);
