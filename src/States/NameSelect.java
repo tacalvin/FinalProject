@@ -21,7 +21,7 @@ public class NameSelect extends GameState
     {
         super(gsm);
         name = new char[1];
-        nameBack = new BackGround("res/pichere");
+        nameBack = new BackGround("res/pichere",0,0);
 
     }
 

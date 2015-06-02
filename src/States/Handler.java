@@ -18,7 +18,8 @@ import java.util.ArrayList;
 /**
  * Created by 1817172 on 3/27/2015.
  */
-public class Handler extends GameState {
+public class Handler extends GameState
+{
 
 
     //class is going to loop through game objects to update and render
@@ -30,40 +31,44 @@ public class Handler extends GameState {
     private int level;
     private Player player;
     private float time;
-    private BackGround gameBack1,gameBack2;
-    private boolean bk1active, bk2active;
+    private BackGround gameBack1, gameBack2;
 
 
-    public Handler(GameStateManager game,Save save) {
+    public Handler(GameStateManager game, Save save)
+    {
         super(game);
-        gameBack1 = new BackGround("/res gameback url here");
-        gameBack2 = new BackGround("/res/back.png");
+        gameBack1 = new BackGround("/res gameback url here",0,0);
+        gameBack2 = new BackGround("/res/back.png",0,0);
+        gameBack2.setY(Game.HEIGHT);
         this.save = save;
         ofSatan = new Spawn(this);
         level = 1;
-        time =0;
+        time = 0;
         player = new Player(Game.WIDTH / 2, Game.HEIGHT / 2, ID.Player, this);
 
-        hud = new HUD(player,this);
+        hud = new HUD(player, this);
         object.add(player);
 
 
-
     }
 
-    public float getTime() {
+    public float getTime()
+    {
         return time;
     }
 
-    public void setTime(float time) {
+    public void setTime(float time)
+    {
         this.time = time;
     }
 
-    public Player getPlayer() {
+    public Player getPlayer()
+    {
         return player;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(int level)
+    {
         this.level = level;
     }
 
@@ -71,66 +76,62 @@ public class Handler extends GameState {
     {
 
 
-        if(Keyboard.isKeyDown(KeyEvent.VK_SPACE))
+        if (Keyboard.isKeyDown(KeyEvent.VK_SPACE))
             getPlayer().shoot();
 
         //takes a keyevent and moves based on keycode
-        if(Keyboard.isKeyDown(KeyEvent.VK_W))
-        getPlayer().move(KeyEvent.VK_W);
-        if(Keyboard.isKeyDown(KeyEvent.VK_A))
+        if (Keyboard.isKeyDown(KeyEvent.VK_W))
+            getPlayer().move(KeyEvent.VK_W);
+        if (Keyboard.isKeyDown(KeyEvent.VK_A))
             getPlayer().move(KeyEvent.VK_A);
-        if(Keyboard.isKeyDown(KeyEvent.VK_S))
+        if (Keyboard.isKeyDown(KeyEvent.VK_S))
             getPlayer().move(KeyEvent.VK_S);
-        if(Keyboard.isKeyDown(KeyEvent.VK_D))
+        if (Keyboard.isKeyDown(KeyEvent.VK_D))
             getPlayer().move(KeyEvent.VK_D);
-        if(Keyboard.isKeyDown(KeyEvent.VK_Q))
+        if (Keyboard.isKeyDown(KeyEvent.VK_Q))
             getPlayer().useSpecial();
-
-
-
-
-
-
 
 
     }
 
     public void tick()
     {
-        time+= .1f;
+        time += .1f;
         input();
 
-        if(gameBack1.getPosY()+gameBack1.getIm().getHeight() < gameBack1.getFull().getHeight())
-        {
-            System.out.println("Ticking bk1");
-            bk1active = true;
-            bk2active = false;
+
+
+
+
             gameBack1.tick();
-
-        }
-
-        else if(gameBack2.getPosY()+gameBack2.getIm().getHeight() < gameBack2.getFull().getHeight())
-        {
-            bk1active = false;
-            bk2active = true;
             gameBack2.tick();
-        }
 
-        else
+
+        if(gameBack1.getY() == -Game.HEIGHT)
         {
-            gameBack1.setPosX(0);
-            gameBack1.setPosY(0);
-            gameBack2.setPosX(0);
-            gameBack2.setPosY(0);
+            gameBack1.resetPosY();
         }
 
-        for (int i = 0; i < object.size(); i++) {
+        if(gameBack2.getY() == -Game.HEIGHT)
+        {
+            gameBack2.resetPosY();
+        }
+//        else
+//        {
+//            gameBack2.tick();
+//            gameBack1.tick();
+//        }
+
+
+
+        for (int i = 0; i < object.size(); i++)
+        {
             GameObject tempO = object.get(i);
             tempO.tick();
-            if(tempO.getId() == ID.Player)
+            if (tempO.getId() == ID.Player)
             {
 
-                if(((Player)tempO).getHEALTH() <= 0)
+                if (((Player) tempO).getHEALTH() <= 0)
                 {
 
                     save.gd.setTenativeScore(((Player) tempO).getScore());
@@ -146,18 +147,22 @@ public class Handler extends GameState {
 
     }
 
-    public void render(Graphics g) {
 
 
-        if(bk1active && !bk2active )
-        {
-            System.out.println("Rendering bk1");
-            gameBack1.render(g);
-        }
-        else
+
+
+
+    public void render(Graphics g)
+    {
+
+
+//            System.out.println("Rendering bk1");
+        gameBack1.render(g);
+
         gameBack2.render(g);
 
-        for (int i = 0; i < object.size(); i++) {
+        for (int i = 0; i < object.size(); i++)
+        {
             GameObject tempO = object.get(i);
 
 //            if(tempO.getId() != ID.Player)
@@ -169,6 +174,7 @@ public class Handler extends GameState {
 
 
     }
+
     public void gameOver()
     {
         gsm.setState(gsm.GMOVER);
@@ -176,10 +182,12 @@ public class Handler extends GameState {
 
     public void addPoint(int point)
     {
-        for (int i = 0; i < this.object.size(); i++) {
+        for (int i = 0; i < this.object.size(); i++)
+        {
             GameObject temp = this.object.get(i);
-            if (temp.getId() == ID.Player) {
-                ((Player)temp).setScore(point);
+            if (temp.getId() == ID.Player)
+            {
+                ((Player) temp).setScore(point);
 
             }
         }
@@ -188,43 +196,50 @@ public class Handler extends GameState {
 
     public int getLevel()
     {
-     return level;
+        return level;
     }
 
 
-    public void addObject(GameObject object) {
+    public void addObject(GameObject object)
+    {
         this.object.add(object);
     }
 
-    public void removeObject(GameObject object) {
+    public void removeObject(GameObject object)
+    {
         this.object.remove(object);
     }
 
     @Override
-    public KeyAdapter getKeyListener() {
+    public KeyAdapter getKeyListener()
+    {
         return new GameKeyInput();
     }
 
     @Override
-    public MouseListener getMouseListener() {
+    public MouseListener getMouseListener()
+    {
         return null;
     }
 
     private class GameKeyInput extends KeyAdapter
     {
         @Override
-        public void keyTyped(KeyEvent e) {
-            Keyboard.setState(e.getKeyCode(),true);
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
+        public void keyTyped(KeyEvent e)
+        {
             Keyboard.setState(e.getKeyCode(), true);
         }
 
         @Override
-        public void keyReleased(KeyEvent e) {
-            Keyboard.setState(e.getKeyCode(),false);
+        public void keyPressed(KeyEvent e)
+        {
+            Keyboard.setState(e.getKeyCode(), true);
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e)
+        {
+            Keyboard.setState(e.getKeyCode(), false);
         }
     }
 }

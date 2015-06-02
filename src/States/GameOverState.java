@@ -2,6 +2,7 @@ package States;
 
 import KeyInputs.ScoreInput;
 import Main.Game;
+import UI.BackGround;
 
 import java.awt.*;
 import java.awt.event.KeyListener;
@@ -14,9 +15,11 @@ public class GameOverState extends GameState
 {
 
     private boolean newHighScore;
+    private BackGround bk;
     public GameOverState(GameStateManager gsm)
     {
         super(gsm);
+        bk = new BackGround("lololololololololololo",0,0);
 
         newHighScore = Save.gd.isHighScore(Save.gd.getTentativeScore());
         if(newHighScore) {
@@ -46,6 +49,7 @@ public class GameOverState extends GameState
         Font font = new Font("arial", 1, 50);
         g.setFont(font);
 
+        bk.render(g);
         g.drawString("YOU SUCK", Game.WIDTH / 2, Game.HEIGHT / 2);
 
 

@@ -20,15 +20,18 @@ public class BackGround {
     private BufferedImage im;
     private BufferedImage full;
 
-    int i = 100;//offset
+//    int i = 0;//offset
     int posX, posY, x, y;
+    boolean reset;
 //    private  final int  MAX_WIDTH;
 //    private  final int MAX_HEIGHT;
 
-    public BackGround(String url) {
+
+    public BackGround(String url,int x, int y) {
         URL image = this.getClass().getClassLoader().getResource("res/background.jpg");
         posX = 0;
         posY = 0;
+        reset = false;
         x = 0;
         y = 0;
 //        MAX_HEIGHT = im.getHeight();
@@ -42,7 +45,7 @@ public class BackGround {
             System.out.println(e.getCause());
         }
 
-        im = full.getSubimage(0,0,Game.WIDTH,Game.HEIGHT);
+        im = full.getSubimage(x,y,Game.WIDTH,Game.HEIGHT);
     }
 
 
@@ -58,6 +61,21 @@ public class BackGround {
         this.im = im;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
 
     public int getPosX() {
         return posX;
@@ -75,16 +93,28 @@ public class BackGround {
         this.posY = posY;
     }
 
+
+    public void resetPosY()
+    {
+        if(!reset)
+        y = Game.HEIGHT;
+    }
+
+
+
+
+
     public void tick() {
 
 
-        im = full.getSubimage(posX, posY + i, Game.WIDTH, Game.HEIGHT);
-        i++;
+        y--;
 
     }
 
+
+
     public void render(Graphics g) {
-        g.drawImage(im, 0, 0, null);
+        g.drawImage(im, x, y, null);
     }
 
 

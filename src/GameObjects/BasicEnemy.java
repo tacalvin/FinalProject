@@ -92,7 +92,7 @@ public class BasicEnemy extends GameObject
 
     public void shoot()
     {
-        //TODO: Shoot towards player position
+
         Bullet b = new Bullet(this.x +im.getWidth()/2,this.y+ im.getHeight()/2,ID.EnemyBullet,handler);
 
         float diffx = x - handler.getPlayer().getX();

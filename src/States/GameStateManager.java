@@ -41,8 +41,7 @@ public class GameStateManager {
 
         if (state == MENUS) {
             gameState = new MENU(this);
-            //switch to menu state
-            //TODO: change states
+
             changedState = true;
         }
 
@@ -53,7 +52,7 @@ public class GameStateManager {
                 gameState = new Handler(this,save);
 
                 //switch to play state
-                //TODO: Change states
+
                 changedState = true;
             }
         }

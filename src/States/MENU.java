@@ -20,7 +20,7 @@ public class MENU extends GameState {
     public MENU(GameStateManager gsm)
     {
         super(gsm);
-        menuBack = new BackGround("res/stuffhere.jpeg");
+        menuBack = new BackGround("res/stuffhere.jpeg",0,0);
     }
 
 
