@@ -15,7 +15,7 @@ import java.net.URL;
  */
 public class Boss1 extends GameObject
 {
-    private int HEALTH = 1000;
+    private int HEALTH = 10000;
     private BufferedImage[] im;
     private BufferedImage sheet;
     private Animate an;
@@ -52,7 +52,7 @@ public class Boss1 extends GameObject
                 //checks for collisions of player and enemies
                 if (getBounds().intersects(temp.getBounds())) {
                     HEALTH-=50;
-                    y-=5;
+                    y-=1;
                     if(HEALTH <= 0)
                     {
 
@@ -82,7 +82,33 @@ public class Boss1 extends GameObject
         if(x <= 0 || x >= Game.WIDTH -40)
             velX *= -1;
 
+        shoot();
+
         collision();
+    }
+
+
+    public void shoot()
+    {
+
+        Bullet b = new Bullet(this.x +im[1].getWidth()/2,this.y+ im[1].getHeight()/2,ID.EnemyBullet,handler);
+
+
+            float diffx = x - handler.getPlayer().getX();
+            float diffy = y - handler.getPlayer().getY();
+            float distance = (float) Math.sqrt((x - handler.getPlayer().getX()) * (x - handler.getPlayer().getX()) + (y - handler.getPlayer().getY()) * (y - handler.getPlayer().getY()));
+
+            float velX1 = ((-1 / distance) * diffx);
+            float velY1 = ((-1 / distance) * diffy);
+
+
+            b.setVelX(velX1 * 5);
+            b.setVelY(velY1 * 5);
+            handler.addObject(b);
+
+
+
+        // possibly spawn enemy bullet using sqrt of x^2 + y^2
     }
 
     @Override

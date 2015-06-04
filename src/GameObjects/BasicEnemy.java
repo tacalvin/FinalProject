@@ -100,18 +100,28 @@ public class BasicEnemy extends GameObject
     {
 
         Bullet b = new Bullet(this.x +im[1].getWidth()/2,this.y+ im[1].getHeight()/2,ID.EnemyBullet,handler);
+        if(Math.random() >.5)
+        {
 
-        float diffx = x - handler.getPlayer().getX();
-        float diffy = y - handler.getPlayer().getY();
-        float distance = (float) Math.sqrt((x-handler.getPlayer().getX())*(x-handler.getPlayer().getX())+(y-handler.getPlayer().getY())*(y-handler.getPlayer().getY()));
+            float diffx = x - handler.getPlayer().getX();
+            float diffy = y - handler.getPlayer().getY();
+            float distance = (float) Math.sqrt((x - handler.getPlayer().getX()) * (x - handler.getPlayer().getX()) + (y - handler.getPlayer().getY()) * (y - handler.getPlayer().getY()));
 
-        float velX1 = ((-1 /distance) * diffx);
-        float velY1 = ((-1 /distance) * diffy);
+            float velX1 = ((-1 / distance) * diffx);
+            float velY1 = ((-1 / distance) * diffy);
 
 
-        b.setVelX(velX1 *5);
-        b.setVelY(velY1 *5);
-        handler.addObject(b);
+            b.setVelX(velX1 * 5);
+            b.setVelY(velY1 * 5);
+            handler.addObject(b);
+        }
+
+        else
+        {
+            b.setVelX((float) (Math.random() * 10));
+            b.setVelY((float) (Math.random() * 10));
+            handler.addObject(b);
+        }
         // possibly spawn enemy bullet using sqrt of x^2 + y^2
     }
 

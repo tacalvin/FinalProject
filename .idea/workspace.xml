@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7896bfff-98a6-453b-abc6-bda6d694538e" name="Default" comment="Merged Animation class and new resources">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/Frameworks/Animate.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/Frameworks/Animate.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/BasicEnemy.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/BasicEnemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Boss1.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Boss1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/FastEnemy.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/FastEnemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Player.java" afterPath="$PROJECT_DIR$/src/GameObjects/Player.java" />
+    <list default="true" id="7896bfff-98a6-453b-abc6-bda6d694538e" name="Default" comment="Fixed player animation">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Player.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/res/highscores.sav" afterPath="$PROJECT_DIR$/src/res/highscores.sav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" afterPath="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Boss1.java" afterPath="$PROJECT_DIR$/src/GameObjects/Boss1.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="FinalProject.iws" />
@@ -27,26 +26,6 @@
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="BasicEnemy.java" pinned="false" current-in-tab="true">
-              <entry file="file://$USER_HOME$/Downloads/Final_Project_Stuff-2015-06-03/Final Project Stuff/BasicEnemy.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.40563992">
-                    <caret line="46" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExportToHTMLSettings">
@@ -78,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8245877">
+            <state vertical-scroll-proportion="-17.741936">
               <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,12 +69,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Boss1.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Boss1.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameObjects/Boss1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="0.5">
+              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3039#3040#0" expanded="true" />
+                <element signature="e#3130#3131#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,8 +114,12 @@
         <entry file="file://$PROJECT_DIR$/src/GameObjects/BasicEnemy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
+              <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="125" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3739#3740#0" expanded="true" />
+                <element signature="e#3830#3831#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,11 +197,11 @@
         <option value="$PROJECT_DIR$/src/States/GameStateManager.java" />
         <option value="$PROJECT_DIR$/src/Frameworks/MusicPlayer.java" />
         <option value="$PROJECT_DIR$/src/States/Handler.java" />
-        <option value="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" />
         <option value="$PROJECT_DIR$/src/Frameworks/Animate.java" />
-        <option value="$PROJECT_DIR$/src/GameObjects/Boss1.java" />
         <option value="$PROJECT_DIR$/src/GameObjects/FastEnemy.java" />
         <option value="$PROJECT_DIR$/src/GameObjects/Player.java" />
+        <option value="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" />
+        <option value="$PROJECT_DIR$/src/GameObjects/Boss1.java" />
       </list>
     </option>
   </component>
@@ -229,8 +216,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -890,7 +879,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433394825652</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed player animation">
+      <created>1433394965283</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1433394965283</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -903,21 +898,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32769832" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2030905" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20281996" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2236671" sideWeight="0.5048611" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33289987" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.196468" sideWeight="0.49513888" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19305857" sideWeight="0.49513888" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38444445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18443497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -988,7 +983,8 @@
     <MESSAGE value="Final Background implementation&#10;" />
     <MESSAGE value="LET THERE BE SOUND" />
     <MESSAGE value="Merged Animation class and new resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merged Animation class and new resources" />
+    <MESSAGE value="Fixed player animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed player animation" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1325,14 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/Final_Project_Stuff-2015-06-03/Final Project Stuff/BasicEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40563992">
-          <caret line="46" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Frameworks/Animate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1349,26 +1337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameObjects/BasicEnemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/Final_Project_Stuff-2015-06-03/Final Project Stuff/Boss1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameObjects/Boss1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1397,12 +1369,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/Final_Project_Stuff-2015-06-03/Final Project Stuff/BasicEnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40563992">
+          <caret line="46" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8245877">
+        <state vertical-scroll-proportion="-17.741936">
           <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObjects/BasicEnemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="125" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3739#3740#0" expanded="true" />
+            <element signature="e#3830#3831#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObjects/Boss1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5">
+          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3039#3040#0" expanded="true" />
+            <element signature="e#3130#3131#0" expanded="true" />
           </folding>
         </state>
       </provider>
