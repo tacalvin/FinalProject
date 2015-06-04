@@ -33,6 +33,7 @@ public class Player extends GameObject {
     private int speed;
 
 
+
     public Player(float x, float y, ID id, Handler handler) {
         super(x, y, id,handler);
         currentPower =1;
@@ -40,12 +41,15 @@ public class Player extends GameObject {
         shotTimer =0;
         specialTimer =0;
         im = new BufferedImage[2];
+//        shot = new Audio("res/laser.wav");
 
 
         try {
             // only way files ever seem to load so use url which starts in src than specify res and specific files if needed
             URL url = this.getClass().getClassLoader().getResource("res/player.png");
             sheet = ImageIO.read(url);
+
+
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -128,7 +132,9 @@ public class Player extends GameObject {
 
     public void shoot()
     {
+        handler.getMp().playSound("shot");
         this.loadShootPattern(currentPower);
+
     }
     public void useSpecial()
     {

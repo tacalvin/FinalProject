@@ -22,10 +22,13 @@ public class Game extends Canvas implements Runnable {
     private GameStateManager gsm;
 
 
+
     public Game(int WIDTH) {
         this.WIDTH = WIDTH;
         HEIGHT = WIDTH / 12 * 9;
         gsm = new GameStateManager();
+
+
 
 
         this.addKeyListener(gsm.getKeyinputListener());
@@ -40,6 +43,7 @@ public class Game extends Canvas implements Runnable {
 
 
     }
+
 
     public synchronized void start() {
         thread = new Thread(this);

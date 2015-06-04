@@ -1,5 +1,6 @@
 package States;
 
+import Frameworks.MusicPlayer;
 import GameLogic.ID;
 import GameLogic.Spawn;
 import GameObjects.GameObject;
@@ -32,6 +33,7 @@ public class Handler extends GameState {
     private Player player;
     private float time;
     private BackGround gameBack1, gameBack2;
+    private MusicPlayer mp;
 
 
     public Handler(GameStateManager game, Save save) {
@@ -39,6 +41,8 @@ public class Handler extends GameState {
         gameBack1 = new BackGround("/res gameback url here", 0, 0);
         gameBack2 = new BackGround("/res/back.png", 0, 0);
         gameBack2.setY(gameBack2.getFull().getHeight());
+
+        this.mp = gsm.getMp();
 
 
         this.save = save;
@@ -53,6 +57,10 @@ public class Handler extends GameState {
 
     }
 
+    public MusicPlayer getMp()
+    {
+        return mp;
+    }
 
     public float getTime() {
         return time;
@@ -117,7 +125,7 @@ public class Handler extends GameState {
         }
 
         hud.tick();
-//        ofSatan.tick();
+        ofSatan.tick();
 
 
     }

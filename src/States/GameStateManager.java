@@ -1,5 +1,8 @@
 package States;
 
+import Frameworks.Audio;
+import Frameworks.MusicPlayer;
+
 import java.awt.*;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
@@ -19,14 +22,26 @@ public class GameStateManager {
     public Save save;
     private boolean nameSelected;
     private String Name;
+    private MusicPlayer mp;
 
 
     public GameStateManager() {
         setState(MENUS);
+
+        //load sounds here
+        mp = new MusicPlayer();
+        mp.addSound("shot", new Audio("res/laser.wav"));
+
+
         save = new Save();
         save.load();
         nameSelected = false;
         changedState = false;
+    }
+
+    public MusicPlayer getMp()
+    {
+        return mp;
     }
 
     public void setName(String name) {
