@@ -1,5 +1,6 @@
 package GameObjects;
 
+import Frameworks.Animate;
 import GameLogic.ID;
 import Main.Game;
 import States.Handler;
@@ -15,18 +16,30 @@ import java.net.URL;
 public class Boss1 extends GameObject
 {
     private int HEALTH = 1000;
-    private BufferedImage im;
+    private BufferedImage[] im;
+    private BufferedImage sheet;
+    private Animate an;
     public Boss1(float x, float y, ID id, Handler handler) {
         super(x, y, id, handler);
 
-        URL url = this.getClass().getClassLoader().getResource("res/Boss1.png");
+        im = new BufferedImage[3];
+        URL url = this.getClass().getClassLoader().getResource("res/BossFinal.png");
         try {
-            im = ImageIO.read(url);
+            sheet = ImageIO.read(url);
         }
         catch (Exception e)
         {
             System.out.println(e);
         }
+
+        int pos = 0;
+        for(int i = 0; i < 3; i++)
+        {
+            im[i] = sheet.getSubimage(pos, 0, 150, 139);
+            pos += 150;
+        }
+
+        an = new Animate(im);
 
         velY = 5;
         velX = 5;
@@ -75,11 +88,16 @@ public class Boss1 extends GameObject
     @Override
     public void render(Graphics g)
     {
-        g.drawImage(im, (int) x, (int) y, null);
+        if(velX > 0)
+            g.drawImage(an.moveLeft(), (int) x, (int) y, null);
+        else if(velX < 0)
+            g.drawImage(an.straight(), (int) x, (int) y, null);
+        else
+            g.drawImage(an.moveRight(), (int) x, (int) y, null);
     }
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, im.getWidth(), im.getHeight());
+        return new Rectangle((int) x, (int) y, im[1].getWidth(), im[1].getHeight());
     }
 }

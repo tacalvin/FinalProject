@@ -19,4 +19,18 @@ public class Animate
         return ims[frame];
     }
 
+    public BufferedImage moveLeft()
+    {
+        return ims[0];
+    }
+
+    public BufferedImage straight()
+    {
+        return ims[1];
+    }
+
+    public BufferedImage moveRight()
+    {
+        return ims[2];
+    }
 }

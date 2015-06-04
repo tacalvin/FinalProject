@@ -1,5 +1,6 @@
 package GameObjects;
 
+import Frameworks.Animate;
 import GameLogic.ID;
 import Main.Game;
 import States.Handler;
@@ -14,18 +15,31 @@ import java.net.URL;
  */
 public class FastEnemy extends GameObject
 {
-    private BufferedImage im;
+    private BufferedImage sheet;
+    private BufferedImage[] im;
+    private Animate an;
+
     public FastEnemy(float x, float y, ID id, Handler handler) {
         super(x, y, id, handler);
+        im = new BufferedImage[3];
 
-        URL url = this.getClass().getClassLoader().getResource("res/Fast Enemy.png");
+        URL url = this.getClass().getClassLoader().getResource("res/FastEnemy.png");
         try {
-            im = ImageIO.read(url);
+            sheet = ImageIO.read(url);
         }
         catch (Exception e)
         {
             System.out.println(e);
         }
+        int pos = 0;
+
+        for(int i = 0; i < 3; i++)
+        {
+            im[i] = sheet.getSubimage(pos, 0, 40, 41);
+            pos += 40;
+        }
+        an = new Animate(im);
+
         velY = 15;
         velX = 15;
     }
@@ -73,11 +87,16 @@ public class FastEnemy extends GameObject
     @Override
     public void render(Graphics g)
     {
-        g.drawImage(im, (int) x, (int) y, null);
+        if(velX > 0)
+            g.drawImage(an.moveLeft(), (int) x, (int) y, null);
+        else if(velX < 0)
+            g.drawImage(an.straight(), (int) x, (int) y, null);
+        else
+            g.drawImage(an.moveRight(), (int) x, (int) y, null);
     }
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, im.getWidth(), im.getHeight());
+        return new Rectangle((int) x, (int) y, im[1].getWidth(), im[1].getHeight());
     }
 }

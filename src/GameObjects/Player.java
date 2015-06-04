@@ -29,10 +29,9 @@ public class Player extends GameObject {
     private int currentPower;
     public  float shotTimer;
     public  float specialTimer;
-    private Animate an;
+    private Animate[] an;
     private int speed;
-
-
+    private int moving;
 
     public Player(float x, float y, ID id, Handler handler) {
         super(x, y, id,handler);
@@ -40,26 +39,31 @@ public class Player extends GameObject {
         currentSpecial =1;
         shotTimer =0;
         specialTimer =0;
-        im = new BufferedImage[2];
-//        shot = new Audio("res/laser.wav");
-
+        im = new BufferedImage[3];
+        an = new Animate[3];
 
         try {
             // only way files ever seem to load so use url which starts in src than specify res and specific files if needed
-            URL url = this.getClass().getClassLoader().getResource("res/player.png");
+            URL url = this.getClass().getClassLoader().getResource("res/PlayerPowers.png");
             sheet = ImageIO.read(url);
-
-
         } catch (Exception e) {
             System.out.println(e);
         }
-
+        int xCount = 0;
+        int yCount = 0;
         speed = 10;
-
-        im[0] = sheet.getSubimage(0,0,32,32);
-        im[1] = sheet.getSubimage(32,0,32,32);
-        an = new Animate(im);
-
+        moving = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            xCount = 0;
+            for(int z = 0; z < 3; z++)
+            {
+                im[z] = sheet.getSubimage(xCount, yCount, 80, 80);
+                xCount += 80;//resize image
+            }
+            an[i] = new Animate(im);
+            yCount += 80;
+        }
 
     }
 
@@ -201,12 +205,12 @@ public class Player extends GameObject {
     public void render(Graphics g) {
 
 
-
-        g.drawImage(an.getFrame(currentFrame), (int) x, (int) y, null);
-        if(currentFrame ==0)
-        currentFrame++;
+        if(moving == KeyEvent.VK_A)
+            g.drawImage(an[currentPower - 1].moveLeft(), (int) x, (int) y, null);
+        else if(moving == KeyEvent.VK_D)
+            g.drawImage(an[currentPower - 1].moveRight(), (int) x, (int) y, null);
         else
-            currentFrame--;
+            g.drawImage(an[currentPower - 1].straight(), (int) x, (int) y, null);
 
 
 

@@ -1,5 +1,6 @@
 package GameObjects;
 
+import Frameworks.Animate;
 import GameLogic.ID;
 import Main.Game;
 import States.Handler;
@@ -15,22 +16,28 @@ import java.util.Random;
  */
 public class BasicEnemy extends GameObject
 {
-
-    private BufferedImage im;
+    private BufferedImage sheet;
+    private BufferedImage[] im;
     private float shotTime = 1f;
     private boolean moved = false;//true when enemy is moved down from screen
+    private Animate an;
 
     public BasicEnemy(float x, float y, ID id, Handler handler) {
         super(x, y, id, handler);
-
-        URL url = this.getClass().getClassLoader().getResource("res/EnemyONACID.png");
+        im = new BufferedImage[3];
+        URL url = this.getClass().getClassLoader().getResource("res/BasicEnemy.png");
         try {
-            im = ImageIO.read(url);
+            sheet = ImageIO.read(url);
         }
         catch (Exception e)
         {
             System.out.println(e);
         }
+
+        im[0] = sheet.getSubimage(0,0,40,47); //moving left
+        im[1] = sheet.getSubimage(40,0,40,47);//regular straight
+        im[2] = sheet.getSubimage(80,0,40,47);//moving right
+        an = new Animate(im);
         velY = 5;
         velX =5;
     }
@@ -80,7 +87,6 @@ public class BasicEnemy extends GameObject
 
 
 
-
         if(y <= 0 || y >= Game.HEIGHT -40)
             velY *= -1;
 
@@ -93,7 +99,7 @@ public class BasicEnemy extends GameObject
     public void shoot()
     {
 
-        Bullet b = new Bullet(this.x +im.getWidth()/2,this.y+ im.getHeight()/2,ID.EnemyBullet,handler);
+        Bullet b = new Bullet(this.x +im[1].getWidth()/2,this.y+ im[1].getHeight()/2,ID.EnemyBullet,handler);
 
         float diffx = x - handler.getPlayer().getX();
         float diffy = y - handler.getPlayer().getY();
@@ -112,12 +118,17 @@ public class BasicEnemy extends GameObject
     @Override
     public void render(Graphics g)
     {
-        g.drawImage(im, (int) x, (int) y, null);
+        if(velX > 0)
+            g.drawImage(an.moveLeft(), (int) x, (int) y, null);
+        else if(velX < 0)
+            g.drawImage(an.straight(), (int) x, (int) y, null);
+        else
+            g.drawImage(an.moveRight(), (int) x, (int) y, null);
     }
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle((int) x, (int) y, im.getWidth(), im.getHeight());
+        return new Rectangle((int) x, (int) y, im[1].getWidth(), im[1].getHeight());
     }
 
 
