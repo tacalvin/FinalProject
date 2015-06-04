@@ -22,20 +22,17 @@ public class BackGround {
 
 //    int i = 0;//offset
     int posX, posY, x, y;
-    boolean reset;
-//    private  final int  MAX_WIDTH;
-//    private  final int MAX_HEIGHT;
+
 
 
     public BackGround(String url,int x, int y) {
         URL image = this.getClass().getClassLoader().getResource("res/background.jpg");
-        posX = 0;
-        posY = 0;
-        reset = false;
+        posX = x;
+        posY = y;
+
         x = 0;
         y = 0;
-//        MAX_HEIGHT = im.getHeight();
-//        MAX_WIDTH = im.getWidth();
+
         //use when images exist
         //URL image = this.getClass().getClassLoader().getResource(url);
         try {
@@ -45,7 +42,7 @@ public class BackGround {
             System.out.println(e.getCause());
         }
 
-        im = full.getSubimage(x,y,Game.WIDTH,Game.HEIGHT);
+        im = full.getSubimage(x,y,Game.WIDTH,full.getHeight());
     }
 
 
@@ -74,6 +71,7 @@ public class BackGround {
     }
 
     public void setY(int y) {
+
         this.y = y;
     }
 
@@ -85,27 +83,35 @@ public class BackGround {
         this.posX = posX;
     }
 
-    public int getPosY() {
+    public int getPosY()
+    {
+
         return posY;
     }
 
-    public void setPosY(int posY) {
+    public void setPosY(int posY)
+    {
+
         this.posY = posY;
     }
 
 
+
+
     public void resetPosY()
     {
-        if(!reset)
-        y = Game.HEIGHT;
+
+
+        y = full.getHeight();
     }
+
+
 
 
 
 
 
     public void tick() {
-
 
         y--;
 
