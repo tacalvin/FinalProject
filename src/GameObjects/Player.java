@@ -85,6 +85,8 @@ public class Player extends GameObject {
         if(e == KeyEvent.VK_D)
             x += speed;
 
+        moving = e;
+
 
 
 

@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7896bfff-98a6-453b-abc6-bda6d694538e" name="Default" comment="LET THERE BE SOUND">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/BasicEnemy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/BossFinal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/FastEnemy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/res/PlayerPowers.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/Main/Game.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/Main/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Game/Game.jar" afterPath="$PROJECT_DIR$/out/artifacts/Game/Game.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/GameStateManager.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/GameStateManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/Handler$GameKeyInput.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/Handler$GameKeyInput.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/States/Handler.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/States/Handler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Player.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Frameworks/Animate.java" afterPath="$PROJECT_DIR$/src/Frameworks/Animate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" afterPath="$PROJECT_DIR$/src/GameObjects/BasicEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Boss1.java" afterPath="$PROJECT_DIR$/src/GameObjects/Boss1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/FastEnemy.java" afterPath="$PROJECT_DIR$/src/GameObjects/FastEnemy.java" />
+    <list default="true" id="7896bfff-98a6-453b-abc6-bda6d694538e" name="Default" comment="Merged Animation class and new resources">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/Frameworks/Animate.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/Frameworks/Animate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/BasicEnemy.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/BasicEnemy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Boss1.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/Boss1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/FastEnemy.class" afterPath="$PROJECT_DIR$/out/production/FinalProject/GameObjects/FastEnemy.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObjects/Player.java" afterPath="$PROJECT_DIR$/src/GameObjects/Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -91,9 +81,11 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0959885">
-              <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.8245877">
+              <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,9 +95,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,9 +105,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,10 +131,8 @@
         <entry file="file://$PROJECT_DIR$/src/GameObjects/BasicEnemy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -898,7 +884,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433381910595</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Merged Animation class and new resources">
+      <created>1433394825652</created>
+      <option name="number" value="00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1433394825652</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
@@ -995,7 +987,8 @@
     <MESSAGE value="Background now infinitly scrolls&#10;" />
     <MESSAGE value="Final Background implementation&#10;" />
     <MESSAGE value="LET THERE BE SOUND" />
-    <option name="LAST_COMMIT_MESSAGE" value="LET THERE BE SOUND" />
+    <MESSAGE value="Merged Animation class and new resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merged Animation class and new resources" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1359,10 +1352,8 @@
     <entry file="file://$PROJECT_DIR$/src/GameObjects/BasicEnemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1378,9 +1369,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1404,17 +1393,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObjects/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0959885">
-          <caret line="226" column="0" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.8245877">
+          <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
