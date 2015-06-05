@@ -4,7 +4,6 @@ import GameObjects.BasicEnemy;
 import GameObjects.Boss1;
 import GameObjects.FastEnemy;
 import GameObjects.GameObject;
-import GameObjects.PowerUps.Trishotp;
 import Main.Game;
 import States.Handler;
 
@@ -59,7 +58,7 @@ public class Spawn {
         {
             handler.setTime(0);
             for(int i = 0; i < handler.getLevel() * 3; i++)
-                handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH-100),r.nextInt(Game.HEIGHT-100),ID.BasicEnemy,handler));
+                handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH-100),0,ID.BasicEnemy,handler));
             for(int i = 0; i < handler.getLevel() * 2; i++)
                 handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH-100),r.nextInt(Game.HEIGHT-100),ID.BasicEnemy,handler));
         }

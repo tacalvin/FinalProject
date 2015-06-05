@@ -21,7 +21,7 @@ public class NameSelect extends GameState
     {
         super(gsm);
         name = new char[1];
-        nameBack = new BackGround("res/pichere",0,0);
+        nameBack = new BackGround("res/background.jpg",0,0);
 
     }
 
@@ -38,7 +38,7 @@ public class NameSelect extends GameState
 
 
         nameBack.render(g);
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
 
         Font font = new Font("arial", 1, 50);
         g.setFont(font);

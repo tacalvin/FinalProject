@@ -26,15 +26,15 @@ public class BackGround {
 
 
     public BackGround(String url,int x, int y) {
-        URL image = this.getClass().getClassLoader().getResource("res/background.jpg");
+
         posX = x;
         posY = y;
 
         x = 0;
         y = 0;
 
-        //use when images exist
-        //URL image = this.getClass().getClassLoader().getResource(url);
+
+        URL image = this.getClass().getClassLoader().getResource(url);
         try {
 
             full = ImageIO.read(image);

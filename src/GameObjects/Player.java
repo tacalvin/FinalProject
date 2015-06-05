@@ -71,6 +71,11 @@ public class Player extends GameObject {
         this.currentPower = currentPower;
     }
 
+    public void setMoving(int moving)
+    {
+        this.moving = moving;
+    }
+
     public void move(int e)
     {
         if(e == KeyEvent.VK_W)
@@ -85,7 +90,7 @@ public class Player extends GameObject {
         if(e == KeyEvent.VK_D)
             x += speed;
 
-        moving = e;
+
 
 
 
@@ -138,7 +143,7 @@ public class Player extends GameObject {
 
     public void shoot()
     {
-        handler.getMp().playSound("shot");
+
         this.loadShootPattern(currentPower);
 
     }
@@ -166,7 +171,7 @@ public class Player extends GameObject {
             case 1:
                 if(this.shotTimer <0) {
                     BasicShot.shoot(handler, this);
-                    shotTimer = .01f;
+                    shotTimer = .1f;
                 }
                 break;
             case 2:
@@ -194,8 +199,8 @@ public class Player extends GameObject {
 
 
 
-        x = Game.clamp((int) x, 0, Game.WIDTH - 37);
-        y = Game.clamp((int) y, 0, Game.HEIGHT - 60);
+        x = Game.clamp((int) x, 0, Game.WIDTH - 100);
+        y = Game.clamp((int) y, 0, Game.HEIGHT - 80);
 
         collision();
     }

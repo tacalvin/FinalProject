@@ -20,7 +20,7 @@ public class MENU extends GameState {
     public MENU(GameStateManager gsm)
     {
         super(gsm);
-        menuBack = new BackGround("res/stuffhere.jpeg",0,0);
+        menuBack = new BackGround("res/background.jpg",0,0);
     }
 
 
@@ -61,11 +61,11 @@ public class MENU extends GameState {
         g.fillRect((Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) - 25, 200, 50);
 
         //Menu Title
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
         g.drawString("Final Project", (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) - 100);
 
         //draw play text
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
         g.drawString("Play", (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2) + 15);
 
         //name
@@ -79,7 +79,7 @@ public class MENU extends GameState {
         //setName
         font = new Font("arial", 1, 36);
         g.setFont(font);
-        g.setColor(Color.WHITE);
+        g.setColor(Color.BLACK);
         g.drawString("HighScores", (Game.WIDTH / 2) - 100, (Game.HEIGHT / 2)+75);
     }
 

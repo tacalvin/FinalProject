@@ -17,7 +17,7 @@ public class Audio
         try {
             URL url = this.getClass().getClassLoader().getResource(s);
              clip = Applet.newAudioClip(url);
-            System.out.println("ITHINK THERES NO ERROR BUT...");
+
 
         } catch (Exception e) {
             System.out.println(e);

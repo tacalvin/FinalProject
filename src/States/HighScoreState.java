@@ -2,6 +2,7 @@ package States;
 
 import KeyInputs.ScoreInput;
 import Main.Game;
+import UI.BackGround;
 
 import java.awt.*;
 import java.awt.event.KeyListener;
@@ -14,10 +15,12 @@ public class HighScoreState extends GameState {
 
     private long[] highScores;
     private String[] names;
+    private BackGround bk;
     public HighScoreState(GameStateManager gsm) {
         super(gsm);
         highScores = Save.gd.getHighScores();
         names = Save.gd.getNames();
+      bk = new BackGround("res/background.jpg",0,0);
 
     }
 
@@ -30,7 +33,8 @@ public class HighScoreState extends GameState {
     public void render(Graphics g)
     {
 
-        g.setColor(Color.WHITE);
+        bk.render(g);
+        g.setColor(Color.BLACK);
         Font font = new Font("arial",1,60);
         g.setFont(font);
         //save position
@@ -49,7 +53,7 @@ public class HighScoreState extends GameState {
                     "%2d. %7s %s", i+1, highScores[i],names[i]
             );
 
-            g.drawString(s,((Game.WIDTH ) /2)-100, 260 + 20 * i*2);
+            g.drawString(s,((Game.WIDTH ) /2)-100, 200 + 20 * i*2);
         }
 
 

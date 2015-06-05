@@ -19,7 +19,7 @@ public class GameOverState extends GameState
     public GameOverState(GameStateManager gsm)
     {
         super(gsm);
-        bk = new BackGround("lololololololololololo",0,0);
+        bk = new BackGround("res/background2.png",0,0);
 
         newHighScore = Save.gd.isHighScore(Save.gd.getTentativeScore());
         if(newHighScore) {
@@ -50,7 +50,7 @@ public class GameOverState extends GameState
         g.setFont(font);
 
         bk.render(g);
-        g.drawString("YOU SUCK", Game.WIDTH / 2, Game.HEIGHT / 2);
+        g.drawString("Game Over", Game.WIDTH / 2, Game.HEIGHT / 2);
 
 
 

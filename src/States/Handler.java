@@ -38,8 +38,8 @@ public class Handler extends GameState {
 
     public Handler(GameStateManager game, Save save) {
         super(game);
-        gameBack1 = new BackGround("/res gameback url here", 0, 0);
-        gameBack2 = new BackGround("/res/back.png", 0, 0);
+        gameBack1 = new BackGround("res/background2.png", 0, 0);
+        gameBack2 = new BackGround("res/background2.png", 0, 0);
         gameBack2.setY(gameBack2.getFull().getHeight());
 
         this.mp = gsm.getMp();
@@ -84,10 +84,28 @@ public class Handler extends GameState {
         if (Keyboard.isKeyDown(KeyEvent.VK_SPACE)) getPlayer().shoot();
 
         //takes a keyevent and moves based on keycode
-        if (Keyboard.isKeyDown(KeyEvent.VK_W)) getPlayer().move(KeyEvent.VK_W);
-        if (Keyboard.isKeyDown(KeyEvent.VK_A)) getPlayer().move(KeyEvent.VK_A);
-        if (Keyboard.isKeyDown(KeyEvent.VK_S)) getPlayer().move(KeyEvent.VK_S);
-        if (Keyboard.isKeyDown(KeyEvent.VK_D)) getPlayer().move(KeyEvent.VK_D);
+        if (Keyboard.isKeyDown(KeyEvent.VK_W))
+        {
+            getPlayer().setMoving(KeyEvent.VK_W);
+            getPlayer().move(KeyEvent.VK_W);
+        }
+        if (Keyboard.isKeyDown(KeyEvent.VK_A))
+        {
+            getPlayer().setMoving(KeyEvent.VK_A);
+            getPlayer().move(KeyEvent.VK_A);
+        }
+        if (Keyboard.isKeyDown(KeyEvent.VK_S))
+        {
+            getPlayer().setMoving(KeyEvent.VK_S);
+            getPlayer().move(KeyEvent.VK_S);
+        }
+
+
+        if (Keyboard.isKeyDown(KeyEvent.VK_D))
+        {
+            getPlayer().setMoving(KeyEvent.VK_D);
+            getPlayer().move(KeyEvent.VK_D);
+        }
         if (Keyboard.isKeyDown(KeyEvent.VK_Q)) getPlayer().useSpecial();
 
 
@@ -126,6 +144,10 @@ public class Handler extends GameState {
 
         hud.tick();
         ofSatan.tick();
+        if(level == 4)
+        {
+            gsm.setState(GameStateManager.GMOVER);
+        }
 
 
     }

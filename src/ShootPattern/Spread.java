@@ -20,8 +20,11 @@ public class Spread
         Bullet b3 = new Bullet(player.getX()+ player.getIm()[0].getWidth()/2,player.getY() + player.getIm()[0].getHeight()/2, ID.BULLET,handler);
         b3.setVelX(-25);
         b3.setVelY(-25);
+        handler.getMp().playSound("shot");
         handler.addObject(b1);
+        handler.getMp().playSound("shot");
         handler.addObject(b2);
+        handler.getMp().playSound("shot");
         handler.addObject(b3);
     }
 }
